@@ -1,0 +1,420 @@
+/*The stylesheet was adapted from https://cn.nytimes.com/interactive/20190101/100books/index.html with minor change. Courtesy to NYTimes.*/
+@charset "utf-8";
+/*reset css*/
+*{margin:0;padding:0;outline: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{height: 100%;font-size: 100%; font-family: 'PingFang SC', 'Arial', 'Heiti SC', 'Microsoft Yahei', 'simsun', sans-serif;-webkit-text-size-adjust:none;line-height:1.62;}
+html{height: 100%;}
+table{border-collapse:collapse;border-spacing:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+ul,ol,li{list-style:none;}
+em{font-style:normal}
+img{border:none;}
+input,img{vertical-align:middle;}
+.fn-clear:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.fn-clear{*zoom:1;}
+a{color:#333;text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:active{color:#555;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+section,aside,header,footer,hgroup,article,main{display:block}
+.main{width:100%;min-width: 300px;}
+.btn{display:inline-block;width:100%;height:40px; background-color: #f53b3b; box-shadow: 0 5px 0 #ce0000; border-radius:15px;color:#fff;font-size: 16px; font-weight:bold;border:0 none;text-align:center;line-height: 40px}
+.input,.select{width:96%;margin: 0 auto;height:24px;;text-indent:8px;padding:8px 0;font-size:14px;line-height: 24px;-webkit-appearance: none;}
+.select{height:40px;padding:0}
+.center {text-align: center}
+@font-face {
+  font-family: 'sharefont';
+  src:    url('../fonts/sharefont.eot?k3pmj9');
+  src:    url('../fonts/sharefont.eot?k3pmj9#iefix') format('embedded-opentype'),
+  url('../fonts/sharefont.ttf?k3pmj9') format('truetype'),
+  url('../fonts/sharefont.woff?k3pmj9') format('woff'),
+  url('../fonts/sharefont.svg?k3pmj9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sharefont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-qrcode:before {
+  content: "\f029";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-facebook-f:before {
+  content: "\f09a";
+}
+.icon-wechat:before {
+  content: "\f1d7";
+}
+.icon-weixin:before {
+  content: "\f1d7";
+}
+.icon-spinner:before {
+  content: "\e900";
+}
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+main {
+  width: 1050px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.heading {
+  border-bottom: 1px solid #ccc;
+}
+.heading h2 a{
+  display: block;
+  height: 70px;
+  padding: 20px 0;
+  background: url("../imgs/nameplate.svg");
+  background-repeat: no-repeat;
+  background-size: 367px;
+  background-position: center center;
+  margin: 0 auto;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.content {
+  margin: 10px 0;
+  position: relative;
+}
+.story {
+  width: 600px;
+  max-width: 100%;
+  margin: 10px auto;
+}
+.story header h1.headline {
+  white-space: normal;
+  float: none;
+  display: block;
+  position: static;
+  font-size: 3.75rem;
+  font-weight: 200;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.story .byline-dateline {
+  text-align: center;
+  font-size: 12px;
+}
+.byline-dateline .byline {
+  font-size: 0.6875rem;
+  line-height: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.last-byline {
+  margin-right: 7px;
+}
+.summary-content {
+  text-align: left;
+  margin: 2rem auto 1rem;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.g-tags li {
+  display: inline-block;
+}
+.g-tags li a {
+  font-family: 'nyt-franklin';
+  display: block;
+  color: #333;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.g-tags li a:hover {
+  text-decoration: none;
+  background: #54c3fe;
+}
+.g-tags li a.g-tag-active {
+  background: #0299ea;
+  color: #fff;
+}
+#g-graphic {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.g-thing {
+  width: 33%;
+  display: block;
+  -ms-flex: 0 0 33%;
+  flex: 0 0 33%;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0 10px;
+}
+.g-thing .g-thing-wrapper {
+  padding-bottom: 15px;
+}
+.g-thing h3 {
+  font-weight: 400;
+  font-size: 24px;
+  color: #333;
+  padding: 5px;
+  overflow: hidden;
+  text-align: center;
+  padding:  5px 0;
+}
+
+.g-thing p {
+  font-size: 14px;
+  color: #333;
+}
+.g-thing p.category {
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+  padding: 5px 0 8px 0;
+}
+.g-thing p.byline {
+  color: gray;
+  font-size:  14px;
+  text-align: center;
+  padding: 8px 0 8px 0;
+}
+.g-thing h3.center_text {
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.g-thing:hover{
+   background-color:#F5F5F5;
+}
+.g-thing .g-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
+}
+.g-rank {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  text-align: center;
+  background: #0299ea;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.img_cont {
+  height: 236px;
+  padding: 10px 0;
+  overflow: hidden;
+  text-align: center;
+  line-height: 136px;
+}
+.g-promo-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+#footer {
+  border-top: 2px solid #000;
+  padding: 8px 10px;
+}
+#footer .copyright {
+  color: #333;
+  font-size: 9px;
+  float: left;
+}
+#footer .footerLinkList {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+#footer .footerLinkList .footerLink {
+  float: left;
+  padding-right: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-right: 1px solid #e2e2e2;
+  height: 16px;
+  line-height: 16px;
+}
+#footer .footerLinkList .footerLink.last {
+  border-right: none;
+}
+#footer .footerLinkList .footerLink #rssIcon {
+  overflow: visible;
+  padding-right: 18px;
+}
+.tags_wrapper {
+  margin: 0 5px;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+.nav_scroller {
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+.share_btns {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.share_btn {
+  border: 0;
+  background: #3b3b3b;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 5px;
+  font-size: 1px;
+}
+.share_btn:hover {
+  opacity: 0.85;
+}
+.share_btn i {
+  font-size: 18px;
+  color: #fff;
+  vertical-align: middle;
+}
+.share_btn.facebook {
+  background: #39579a;
+}
+.share_btn.twitter {
+  background: #3a96ff;
+}
+.share_btn.wechat {
+  background: #52c332;
+}
+footer {
+  clear: both;
+  padding-top: 10px;
+}
+@media screen and (min-width: 977px) {
+  .g-thing h3 {
+    font-weight: 400;
+    font-size: 24px;
+    padding: 5px;;
+    color: #333;
+  }
+  .g-thing .g-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  }
+}
+@media screen and (max-width: 976px) {
+  .g-thing {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .g-thing {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .g-thing {
+    width: 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .g-thing h3 {
+    font-size: 18px;
+  }
+  .content {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .heading h2 a {
+    max-width: 80%;
+    background-size: 100% auto;
+  }
+  .story header h1.headline {
+    font-size: 1.75rem;
+  }
+  .summary-content {
+    margin: 1rem auto 1rem;
+  }
+  .share_btns {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
