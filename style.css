@@ -418,3 +418,40 @@ footer {
     margin-bottom: 20px;
   }
 }
+
+/* For filter feature, see demo of mixitup https://www.kunkalabs.com/mixitup/docs/get-started/*/
+.controls {
+    padding: 1rem;
+    font-size: 0.1px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.control {
+  background-color: rgba(212, 212, 212, 0.25);
+  border: none;
+
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.control:hover {
+    background: rgba(63, 63, 63, 0.24);
+}
+
+.mixitup-control-active {
+    background: rgba(137, 137, 137, 0.57);
+}
+
+.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
