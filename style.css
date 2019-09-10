@@ -377,15 +377,24 @@ footer {
   .g-thing .g-card {
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   }
+  .controls {
+    width: 45%;
+  }
 }
 @media screen and (max-width: 976px) {
   .g-thing {
     width: 25%;
   }
+  .controls {
+    width: 65%;
+  }
 }
 @media screen and (max-width: 767px) {
   .g-thing {
     width: 33%;
+  }
+  .controls {
+    width: 75%;
   }
 }
 
@@ -416,6 +425,9 @@ footer {
   .share_btns {
     position: static;
     margin-bottom: 20px;
+  }
+  .controls {
+    width: 100%;
   }
 }
 
