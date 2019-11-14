@@ -467,3 +467,22 @@ footer {
 .control:last-of-type {
     border-radius: 0 3px 3px 0;
 }
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  background-color: darkgrey;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
