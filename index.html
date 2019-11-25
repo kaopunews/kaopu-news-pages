@@ -40,12 +40,7 @@
                     实时更新来自纽约时报、路透社、金融时报等权威媒体的靠谱中文新闻。
                   </p>
                 </div>
-                <div style="width: 100%;text-align: center;">
-                    <div style="display: inline-block;" class="fb-like fb_iframe_widget" data-href="https://kaopu.news" data-width="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=300&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small"><span style="vertical-align: bottom; width: 96px; height: 20px;"><iframe name="f312ee9f5c2d88" width="1000px" height="1000px" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2e03bc1899548c%26domain%3Dkaopu.news%26origin%3Dhttps%253A%252F%252Fkaopu.news%252Ff29146e76d94be4%26relation%3Dparent.parent&amp;container_width=300&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small" style="border: none; visibility: visible; width: 96px; height: 20px;" class=""></iframe></span></div>
-                    <div style="display: inline-block;" >
-                        <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-                        <script type="IN/Share" data-url="https://kaopu.news"></script>
-                    </div>
+                <div style="width: 100%;text-align: center; font-style: italic; font-size: 10px; color: #333" id="last_update">
                 </div>
             </section>
 
@@ -519,6 +514,14 @@
                         <h3>蒙牛将收购日本麒麟的澳大利亚饮料业务</h3>
                         <p class="byline">日经 2019-11-25 02:29:22</p>
                         <p>麒麟的大洋洲业务收益能力停滞不前。已出售奶酪业务，经营资源今后将集中在酒类业务上…</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 纽约时报" href="https://cn.nytimes.com/china/20191125/hong-kong-election/?utm_source=RSS" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>香港区议会选举亲民主派大胜</h3>
+                        <p class="byline">纽约时报 2019-11-25 02:23:33</p>
+                        <p>亲民主派候选人赢得452个席位中的389个，获得压倒性胜利；选民投票率飙升至71%，表明香港公众仍在继续支持民主运动，尽管抗议活动日益变得暴力。</p>
                     </div>
                 </a>
                 
@@ -1071,6 +1074,13 @@
 
                 </div>
             </div>
+            <div style="width: 100%;text-align: center;">
+                <div style="display: inline-block;" class="fb-like fb_iframe_widget" data-href="https://kaopu.news" data-width="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=300&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small"><span style="vertical-align: bottom; width: 96px; height: 20px;"><iframe name="f312ee9f5c2d88" width="1000px" height="1000px" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2e03bc1899548c%26domain%3Dkaopu.news%26origin%3Dhttps%253A%252F%252Fkaopu.news%252Ff29146e76d94be4%26relation%3Dparent.parent&amp;container_width=300&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small" style="border: none; visibility: visible; width: 96px; height: 20px;" class=""></iframe></span></div>
+                <div style="display: inline-block;" >
+                    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                    <script type="IN/Share" data-url="https://kaopu.news"></script>
+                </div>
+            </div>
         </footer>
     </main>
 
@@ -1087,6 +1097,14 @@
                 animateResizeTargets: true
             }
         });
+    </script>
+    <script>
+      var d = new Date();
+      var now_ts_local = d.getTime() / 1000;
+      var offset = d.getTimezoneOffset();
+      var now_ts_utc = now_ts_local + offset * 60;
+      var last_update_minutes = Math.ceil((now_ts_utc - 1574664220.907798) / 60);  // TODO: pass in update_ts_utc, and check format, e.g. if quote needed
+      document.getElementById('last_update').innerHTML = "(最近更新: " + last_update_minutes.toString() + "分钟前)"
     </script>
     <script src="assets/btn.js"></script>
 </body>
