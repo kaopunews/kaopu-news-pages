@@ -61,6 +61,14 @@
 
             <div id="g-graphic">
                 
+                <a class="g-thing 金融时报" href="https://cn.ft.com/story/001085276" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>泛民派在香港区议会选举中获得压倒性胜利</h3>
+                        <p class="byline">金融时报 2019-11-25 14:28:46</p>
+                        <p>泛民派在香港区议会选举中获得压倒性胜利，对中国政府表示不满的选民人数创下纪录。</p>
+                    </div>
+                </a>
+                
                 <a class="g-thing 华尔街日报" href="https://cn.wsj.com/articles/《冰雪奇缘2》周末首映票房强劲-11574661001" target="_blank">
                     <div class="g-thing-wrapper">
                         <h3>《冰雪奇缘2》周末首映票房强劲</h3>
@@ -589,6 +597,22 @@
                     </div>
                 </a>
                 
+                <a class="g-thing 半岛" href="https://chinese.aljazeera.net/news/2019/11/25/russian-intervention-affect-libyan-solution" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>俄罗斯干预如何影响利比亚解决方案？</h3>
+                        <p class="byline">半岛 2019-11-25</p>
+                        <p>政治分析家、中东事务专家阿列克谢·克莱布尼科夫（Alexey Klebnikov）表示，俄罗斯在利比亚的存在仅限于维修军事设备和提供咨询的专家，退役将军哈夫塔尔武装部队发言人也持此观点，但俄罗斯方面到目前为止尚未对此发表评论。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 半岛" href="https://chinese.aljazeera.net/news/2019/11/25/soviet-union-spy-first-nuclear-bomb" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>改变世界的间谍 他让苏联制造出首枚核弹</h3>
+                        <p class="byline">半岛 2019-11-25</p>
+                        <p>《纽约时报》发表了一份披露许多间谍的报告，这些间谍通过从他们工作的美国传递情报，帮助前苏联收获了首枚原子弹。</p>
+                    </div>
+                </a>
+                
                 <a class="g-thing 半岛" href="https://chinese.aljazeera.net/news/2019/11/25/protests-iraq-deadlocked" target="_blank">
                     <div class="g-thing-wrapper">
                         <h3>伊拉克抗议活动是否已陷入僵局？</h3>
@@ -650,22 +674,6 @@
                         <h3>内塔尼亚胡腐败案的关键掌握在亲近人士手中</h3>
                         <p class="byline">半岛 2019-11-25</p>
                         <p>秘密录音、有影响力的媒体大亨、非法雪茄和香槟礼物以及可信赖助手的背叛成为了引人注目的政治因素，并成为了围绕以色列总理内塔尼亚胡腐败案三项指控的因素。</p>
-                    </div>
-                </a>
-                
-                <a class="g-thing 半岛" href="https://chinese.aljazeera.net/news/2019/11/24/haftar-forces-tripoli-russian-support" target="_blank">
-                    <div class="g-thing-wrapper">
-                        <h3>哈夫塔尔部队对的黎波里实施空中禁令 承认获得俄罗斯支持</h3>
-                        <p class="byline">半岛 2019-11-25</p>
-                        <p>利比亚退役将领哈利法·哈夫塔尔的部队宣布在利比亚首都的黎波里上空划定禁飞区域，该市东的米提加机场（Mitiga Airport）不包括在内，并承认俄罗斯提供了坦克和大炮方面的援助。</p>
-                    </div>
-                </a>
-                
-                <a class="g-thing 半岛" href="https://chinese.aljazeera.net/news/2019/11/24/us-congress-rejecting-legalization-israeli-settlements" target="_blank">
-                    <div class="g-thing-wrapper">
-                        <h3>国会签署文件拒绝定居点合法化 事情开始对特朗普不利？</h3>
-                        <p class="byline">半岛 2019-11-25</p>
-                        <p>跨大西洋关系研究中心（CTR）资深研究员罗伯特·亨特（Robert Hunter）表示，美国国会近107名议员已签署文件，谴责美国总统特朗普将以色列在约旦河西岸地区定居点合法化的决定，该研究员并解释称，这份文件获得了国会大部分议员和美国街头民众的支持，而不仅仅局限于民主党议员的支持。</p>
                     </div>
                 </a>
                 
@@ -1102,8 +1110,8 @@
       var d = new Date();
       var now_ts_local = d.getTime() / 1000;
       var offset = d.getTimezoneOffset();
-      var now_ts_utc = now_ts_local + offset * 60;
-      var last_update_minutes = Math.ceil((now_ts_utc - 1574664220.907798) / 60);  // TODO: pass in update_ts_utc, and check format, e.g. if quote needed
+      var now_ts_utc = now_ts_local; //+ offset * 60;
+      var last_update_minutes = Math.ceil((now_ts_utc - 1574664678.211934) / 60);  // TODO: pass in update_ts_utc, and check format, e.g. if quote needed
       document.getElementById('last_update').innerHTML = "(最近更新: " + last_update_minutes.toString() + "分钟前)"
     </script>
     <script src="assets/btn.js"></script>
