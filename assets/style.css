@@ -228,7 +228,7 @@ main {
   font-size:  14px;
   text-align: center;
   padding: 8px 0 8px 0;
-  display: inline-block
+  display: inline-block;
 }
 .g-thing h3.center_text {
   position: absolute;
@@ -378,15 +378,24 @@ footer {
   .g-thing .g-card {
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   }
+  .controls {
+    width: 45%;
+  }
 }
 @media screen and (max-width: 976px) {
   .g-thing {
     width: 25%;
   }
+  .controls {
+    width: 65%;
+  }
 }
 @media screen and (max-width: 767px) {
   .g-thing {
     width: 33%;
+  }
+  .controls {
+    width: 75%;
   }
 }
 
@@ -418,8 +427,12 @@ footer {
     position: static;
     margin-bottom: 20px;
   }
+  .controls {
+    width: 100%;
+  }
 }
 
+/* For filter feature, see demo of mixitup https://www.kunkalabs.com/mixitup/docs/get-started/*/
 .controls {
     padding: 1rem;
     font-size: 0.1px;
@@ -454,4 +467,23 @@ footer {
 
 .control:last-of-type {
     border-radius: 0 3px 3px 0;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  background-color: darkgrey;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }
