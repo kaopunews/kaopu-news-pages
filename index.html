@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="lang" property="lang" content="zh-hans">
-    <meta name="Description" content="实时更新来自纽约时报、路透社、华尔街日报、金融时报等权威媒体的靠谱中文新闻">
+    <meta name="lang" property="lang" content=zh-hans>
+    <meta name="Description" content=实时更新来自纽约时报、路透社、华尔街日报、金融时报等权威媒体的靠谱中文新闻。>
     <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
@@ -29,8 +29,8 @@
 
 </head>
 
-<body>
-  <!-- Google Tag Manager (noscript) -->
+<body onload="checkLang()">
+<!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDQMP8N"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
@@ -40,47 +40,222 @@
         <article class="content">
             <section class="story">
                 <header>
-                    <h1 class="headline" itemprop="headline">
-                        <p>
-                          <a href="/">靠谱新闻</a>
-                        </p>
-                    </h1>
+                  <h1 class="headline" itemprop="headline">
+                    <a href="/">靠谱新闻</a>
+                    <button type="button" id="lang-hans" class="control" onclick="hansHantConvert(s2t=false)">简</button>
+                    <button type="button" id="lang-hant" class="control" onclick="hansHantConvert(s2t=true)">繁</button>
+                  </h1>
                 </header>
                 <div class="summary-content">
                   <p>
-                    实时更新来自纽约时报、路透社、金融时报等权威媒体的靠谱中文新闻。
+                    实时更新来自纽约时报、路透社、华尔街日报、金融时报等权威媒体的靠谱中文新闻。
                   </p>
                 </div>
-                <div style="width: 100%;text-align: center; font-style: italic; font-size: 10px; color: #333" id="last_update">
-                </div>
+
             </section>
 
             <div class="controls">
                 <button type="button" class="control" data-filter="all">全部</button>
-                <button type="button" class="control" data-filter=".纽约时报">纽约时报</button>
-                <button type="button" class="control" data-filter=".金融时报">金融时报</button>
-                <button type="button" class="control" data-filter=".华尔街日报">华尔街日报</button>
-                <button type="button" class="control" data-filter=".路透">路透</button>
-                <button type="button" class="control" data-filter=".财新">财新</button>
-                <button type="button" class="control" data-filter=".朝日">朝日</button>
-                <button type="button" class="control" data-filter=".日经">日经</button>
-                <button type="button" class="control" data-filter=".半岛">半岛</button>
-                <button type="button" class="control" data-filter=".韩民族日报">韩民族日报</button>
-                <button type="button" class="control" data-filter=".端传媒">端传媒</button>
-                <button type="button" class="control" data-filter=".ABC中文（澳）">ABC中文（澳）</button>
-                <button type="button" class="control" data-filter=".星岛日报">星岛日报</button>
-                <button type="button" class="control" data-filter=".共同社（日）">共同社（日）</button>
-
+                
+                  <button type="button" class="control" data-filter=".纽约时报">纽约时报</button>
+                
+                  <button type="button" class="control" data-filter=".金融时报">金融时报</button>
+                
+                  <button type="button" class="control" data-filter=".华尔街日报">华尔街日报</button>
+                
+                  <button type="button" class="control" data-filter=".路透">路透</button>
+                
+                  <button type="button" class="control" data-filter=".财新">财新</button>
+                
+                  <button type="button" class="control" data-filter=".朝日">朝日</button>
+                
+                  <button type="button" class="control" data-filter=".半岛">半岛</button>
+                
+                  <button type="button" class="control" data-filter=".韩民族日报">韩民族日报</button>
+                
+                  <button type="button" class="control" data-filter=".端传媒">端传媒</button>
+                
+                  <button type="button" class="control" data-filter=".ABC中文（澳）">ABC中文（澳）</button>
+                
+                  <button type="button" class="control" data-filter=".星岛日报">星岛日报</button>
+                
+                  <button type="button" class="control" data-filter=".共同社（日）">共同社（日）</button>
+                
             </div>
 
             <div id="g-graphic">
+                
+                <a class="g-thing 财新" href="http://finance.caixin.com/2020-12-01/101634418.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>蛋壳公寓租金贷如何收场？专家建议租客债务转移至运营商</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">财新</p>
+                          <p class="byline first_seen">2分钟前</p>
+                         </div>
+                        <p>租金贷模式下，债务和权益不是对等的。债务归租客，但是完整的租住权益却不在租客手中</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 财新" href="http://international.caixin.com/2020-12-01/101634434.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>最新海外疫情：新冠感染超6314万 累计死亡超146万</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">财新</p>
+                          <p class="byline first_seen">2分钟前</p>
+                         </div>
+                        <p>11月30日，中国之外217个国家和地区有感染病例，累计感染者过千例的已达到160个；美国累计感染约1354万例全球居首，印度超946万例、巴西超633万例分列二三位；非洲确诊超千例国家已48个，欧洲43个，亚洲38个，美洲29个，大洋洲2个</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 财新" href="http://www.caixin.com/2020-12-01/101634441.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>最新疫情：全国新冠累计确诊86542例 内蒙古本土新增4例</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">财新</p>
+                          <p class="byline first_seen">2分钟前</p>
+                         </div>
+                        <p>11月30日，31个省份和新疆兵团新增确诊病例12例，本土病例4例，境外输入病例8例；连续230日无新增死亡病例，累计死亡4634例；无症状感染者新增5例，尚在观察无症状感染者264例；现有确诊病例277例，重症病例8例</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 华尔街日报" href="https://cn.wsj.com/articles/在岸人民币周二上涨，美指跌势难改，中国经济先行指标强劲-11606812611" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>在岸人民币周二上涨，美指跌势难改，中国经济先行指标强劲</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">华尔街日报</p>
+                          <p class="byline first_seen">2分钟前</p>
+                         </div>
+                        <p>在岸人民币周二收盘上涨，美元指数跌势难改，且中国经济持续复苏。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 财新" href="http://science.caixin.com/2020-12-01/101634383.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>荷兰全国性科研诚信调查受阻  受邀高校多拒绝合作</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">财新</p>
+                          <p class="byline first_seen">9分钟前</p>
+                         </div>
+                        <p>由荷兰阿姆斯特丹自由大学发起的这项全国性跨学科科研诚信调查将于今年12月7日结束，但截至11月24日，40000余名目标对象中只有不到15%作出了回应。超过65%的受邀机构拒绝合作，原因或是认为议题敏感、担心负面宣传等</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 共同社（日）" href="https://china.kyodonews.net/news/2020/12/49bc1f4895b7--.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>聚焦：朝鲜对美国大选罕见沉默 欲观察下届政府做法</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">共同社（日）</p>
+                          <p class="byline first_seen">9分钟前</p>
+                         </div>
+                        <p>【共同社北京12月1日电】朝鲜围绕美国总统选举罕见地保持沉默。可能是欲观察下届总统拜登的做法，据称为了不刺激美方，已指示驻外公馆缄口。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 朝日" href="https://asahichinese-j.com/world/13978366" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>日中商务往来恢复 短期出差者开始实质免除2周隔离期</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">朝日</p>
+                          <p class="byline first_seen">11分钟前</p>
+                         </div>
+                        <p>根据日中两国政府的协议，短期出差者入境时实质免除2周隔离期的措施已于11月30日开始实施。此举旨在促进日中间的商务往来，企业方面也非常期待。然而，在新型冠状病毒的平息无法预见的情况下，往来的真正恢复看起来还需要时间。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/MqX12zfr7jQ/" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>美国选举史：一部舞弊与反舞弊的历史</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">端传媒</p>
+                          <p class="byline first_seen">16分钟前</p>
+                         </div>
+                        <p>过去的选举舞弊采用了什么手段，而美国今天的投票系统又如何对这些手段进行防范？</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 路透" href="https://cn.reuters.com/article/china-stock-close-1201-idCNKBS28B457" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>沪深300指数收高2.15%创七周最大涨幅 受制造业数据激励</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">路透</p>
+                          <p class="byline first_seen">22分钟前</p>
+                         </div>
+                        <p>路透上海12月1日 - 中国股市沪深300指数周二录得逾七周最大涨幅，优于预期的制造业数据突显中国这个全球第二大经济体持续复苏。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 金融时报" href="https://cn.ft.com/story/001090448" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>白宫疫情顾问阿特拉斯辞职</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">金融时报</p>
+                          <p class="byline first_seen">22分钟前</p>
+                         </div>
+                        <p>唐纳德•特朗普(Donald Trump)最信任的新型冠状病毒肺炎（COVID-19，即2019冠状病毒病）疫情顾问斯科特•阿特拉斯(Scott Atlas)辞职，结束了他备受争议的任期。他的任期是特朗普政府与公共卫生专家之间就疫情应对方式展开的诸多斗争的缩影。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 日经" href="http://cn.nikkei.com/politicsaeconomy/politicsasociety/42937-2020-12-01-08-45-06.html" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>中日重启商务往来，赴日出差返回仍需两周观察</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">日经</p>
+                          <p class="byline first_seen">29分钟前</p>
+                         </div>
+                        <p>提交新冠检测阴性证明和行动计划后可免除入境后的两周观察期。不过，从中国前往日本出差时，返回中国后仍须观察两周…</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 路透" href="https://cn.reuters.com/article/china-response-usa-sanctions-1201-tues-idCNKBS28B43Z" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>美制裁中国电子进出口公司 中国外交部称将采必要措施维护本国企业正当权益</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">路透</p>
+                          <p class="byline first_seen">36分钟前</p>
+                         </div>
+                        <p>路透北京12月1日 - 美国宣布制裁中国电子进出口有限公司，中国外交部周二回应称，中国敦促美国遵守国际法和国际关系基本准则，以实际行动纠正错误，撤销各种名目的非法制裁；中国将采取必要措施维护本国企业的正当权益。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 朝日" href="https://asahichinese-j.com/society/13979001" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>爱子公主迎来19岁生日 大学课业以在线上课为主(视频)</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">朝日</p>
+                          <p class="byline first_seen">36分钟前</p>
+                         </div>
+                        <p>12月1日，天皇、皇后两陛下的长女·爱子公主迎来了19岁生日。虽然已于今年春季进入学习院大学文学院日语日本文学系，但是因新型冠状病毒影响正在接受在线形式的授课。据宫内厅称，爱子公主愿望可以正常去校园的日子来临。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 纽约时报" href="https://cn.nytimes.com/culture/20201201/wong-kar-wai-romance-films/?utm_source=RSS" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>重温王家卫：寻找浪漫与情感的可能性</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">纽约时报</p>
+                          <p class="byline first_seen">36分钟前</p>
+                         </div>
+                        <p>从《阿飞正传》到《花样年华》，王家卫擅长让转瞬即逝的一刻化为有形，以充满诗意、令人陶醉的方式捕捉短暂的情感。他的电影表面上如同梦幻，却极度精确。</p>
+                    </div>
+                </a>
+                
+                <a class="g-thing 华尔街日报" href="https://cn.wsj.com/articles/香港和新加坡决定将航空旅游气泡安排启动日期延至2020年之后-11606810512" target="_blank">
+                    <div class="g-thing-wrapper">
+                        <h3>香港和新加坡决定将航空旅游气泡安排启动日期延至2020年之后</h3>
+                        <div style="text-align: center">
+                          <p class="byline publisher">华尔街日报</p>
+                          <p class="byline first_seen">36分钟前</p>
+                         </div>
+                        <p>由于最近香港新冠肺炎病例激增，香港和新加坡决定将航空旅游气泡安排的启动日期延至2020年之后。</p>
+                    </div>
+                </a>
                 
                 <a class="g-thing 路透" href="https://cn.reuters.com/article/nato-china-1201-tues-idCNKBS28B432" target="_blank">
                     <div class="g-thing-wrapper">
                         <h3>对于北约将发布报告应对中国崛起 中国外交部称希望北约树立正确中国观</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">12分钟前</p>
+                          <p class="byline first_seen">50分钟前</p>
                          </div>
                         <p>路透北京12月1日 - 对于有报导称北约将在周二发布一份报告，指北约未来10年里必须更谨慎思考如何应对中国及其军事崛起态势，中国外交部新闻发言人华春莹周二表示，希望北约能够树立正确的中国观，理性看待中国发展和外交政策，中国愿在平等和相互尊重的基础上与北约开展对话与合作。</p>
                     </div>
@@ -91,7 +266,7 @@
                         <h3>伊朗称遇害核专家遭“远程暗杀” 案情细节仍存疑</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">12分钟前</p>
+                          <p class="byline first_seen">50分钟前</p>
                          </div>
                         <p>伊朗官员声称，“敌人使用了一种极其专业、先进和新颖的方法”，导致法赫里扎德最终遇害；但其说法与此前伊朗官方及媒体的描述存在较大出入</p>
                     </div>
@@ -102,7 +277,7 @@
                         <h3>日本男星山口达也酒驾被罚35万日元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">24分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>人气组合TOKIO前成员山口达也9月酒后驾驶摩托车发生追尾事故，被检方起诉…</p>
                     </div>
@@ -113,20 +288,9 @@
                         <h3>今日收盘：12月开门红 沪指逼近前期高点</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">24分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>大金融板块领涨，北向资金净买入逾160亿元</p>
-                    </div>
-                </a>
-                
-                <a class="g-thing 财新" href="http://science.caixin.com/2020-12-01/101634383.html" target="_blank">
-                    <div class="g-thing-wrapper">
-                        <h3>荷兰全国性科研诚信调查受阻  受邀高校多拒绝合作</h3>
-                        <div style="text-align: center">
-                          <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">24分钟前</p>
-                         </div>
-                        <p>由荷兰阿姆斯特丹自由大学发起的这项跨学科科研诚信调查将于今年12月7日结束，但截至11月24日，40000余名目标对象中只有不到15%作出了回应。超过65%的受邀机构拒绝合作，原因或是认为议题敏感、担心负面宣传等</p>
                     </div>
                 </a>
                 
@@ -135,7 +299,7 @@
                         <h3>韩国未来资产在与中国安邦保险的酒店交易诉讼中胜诉</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">31分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>路透首尔12月1日 - 韩国投资银行业者未来资产大宇(Mirae Asset Daewoo Co Ltd)周二表示，与中国安邦保险集团在美国的诉讼已经获胜，此前未来资产关联公司放弃了以58亿美元收购安邦旗下15家美国酒店的交易。</p>
                     </div>
@@ -146,7 +310,7 @@
                         <h3>拜登高级经济顾问团队周二将正式亮相 政府的积极刺激倾向显露无疑</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">31分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>路透特拉华州威尔明顿12月1日 - 美国总统当选人拜登将在周二正式宣布他的高级经济政策顾问团队。在他为接管权力做准备之际，美国放慢复苏的经济又因为新冠疫情的卷土重来受到冲击。</p>
                     </div>
@@ -157,7 +321,7 @@
                         <h3>日厚劳相表示要设想最坏情况避免医疗崩溃</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">37分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>【共同社12月1日电】日本厚生劳动相田村宪久1日在记者会上发表看法称，鉴于全国新型冠状病毒重症患者人数创新高，“必须设想最坏情况，（由中央和地方政府）制定计划”，以避免医疗体制崩溃。
 								　　截至11月30日全国重症患者达472人，连续8天创新高。</p>
@@ -169,20 +333,9 @@
                         <h3>报道：三星电子明年可能停止生产Galaxy Note</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">37分钟前</p>
+                          <p class="byline first_seen">1小时前</p>
                          </div>
                         <p>路透援引未具名消息人士的话称，三星电子明年可能会停止生产其高端Galaxy Note机型。</p>
-                    </div>
-                </a>
-                
-                <a class="g-thing 朝日" href="https://asahichinese-j.com/world/13978366" target="_blank">
-                    <div class="g-thing-wrapper">
-                        <h3>日中商务往来恢复 短期出差者免除2周隔离期</h3>
-                        <div style="text-align: center">
-                          <p class="byline publisher">朝日</p>
-                          <p class="byline first_seen">58分钟前</p>
-                         </div>
-                        <p>根据日中双方政府的协议，短期出差者入境时免除2周隔离期的措施已于11月30日开始实施。此举旨在促进日中间的商务往来，企业方面也非常期待。然而，在新型冠状病毒的平息无法预见的情况下，往来的真正恢复看起来还需要时间。</p>
                     </div>
                 </a>
                 
@@ -257,7 +410,7 @@
                         <h3>《路透峰会》股市处于新牛市周期“初期”--Aviva高级基金经理</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>路透伦敦11月30日 - Aviva Investors一位高级基金经理周一称，股市正处于牛市周期的初期，因为资金便宜，投资者会涌入购买，而且经济要比预期更快回到疫情前水准。</p>
                     </div>
@@ -268,7 +421,7 @@
                         <h3>独家：LG化学中国电池厂产能将倍增 以满足特斯拉需求--消息</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>路透首尔12月1日 - 消息人士表示，韩国LG化学在中国为特斯拉代工的电池产能明年将增加超过一倍，以配合特斯拉在中国这个全球最大汽车市场的成长。</p>
                     </div>
@@ -279,7 +432,7 @@
                         <h3>日本流行语大赏出炉，一起来回顾2020年</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>榜单中和疫情相关的词语居多。其中的“安倍口罩”是指日本政府向全国民众免费发放的布口罩，但发生了口罩污损和混入异物等事件。年度大奖是“3密”…</p>
                     </div>
@@ -290,7 +443,7 @@
                         <h3>深圳打击代持“打新” 房价严重倒挂是根源</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>代持购房现象一直存在，“7·15新政”之后，购房名额收紧、摇号规则改变，代持现象更为突出</p>
                     </div>
@@ -301,7 +454,7 @@
                         <h3>“危机来临时首先牺牲弱者的社会”，日本女性自杀人数激增</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">韩民族日报</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>日本10月自杀身亡人数超过因新冠死亡的总人数女性自杀增加人数83%…失业等经济原因</p>
                     </div>
@@ -312,7 +465,7 @@
                         <h3>《路透峰会》网络安全可能是后疫情时期的关键投资主题之一--LGIM</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>路透伦敦11月30日 - 英国最大的资产管理公司--Legal & General投资管理公司(LGIM)首席投资官Sonja Laud周一表示，在当前低利率和疫苗研发消息引领经济复苏这样一个对股市利好的环境下，网络安全可能成为后疫情时期的一个关键投资主题。</p>
                     </div>
@@ -323,7 +476,7 @@
                         <h3>为何很多亚洲亲民主人士支持特朗普？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">纽约时报</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>从香港、越南到缅甸，亚洲很多活动人士和宗教领袖为拜登的当选感到担忧。他们认为，拜登将对中国采取更为缓和的态度，特朗普则更愿意对抗独裁者、捍卫民主。</p>
                     </div>
@@ -334,7 +487,7 @@
                         <h3>JR东日本在车站测试AI屏幕提供信息</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>【共同社12月1日电】东日本铁路公司（JR东日本）1日在车站设置了搭载人工智能（AI）的屏幕，启动了提供周边旅游景点及换乘信息的实证试验。此举旨在为随着少子老龄化等未来将出现的人手不足做准备。</p>
                     </div>
@@ -345,7 +498,7 @@
                         <h3>特斯拉12月将一次性完全纳入标普500指数</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>标普道琼斯指数公司称，将在12月份一次性将特斯拉的全部权重纳入标普500指数。这让人们对这次吸引了华尔街所有投资者目光的重大指数调整有了更多了解。</p>
                     </div>
@@ -356,7 +509,7 @@
                         <h3>疫情关不住网购热潮 今年美国“网络星期一”料刷新线上零售纪录</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">1小时前</p>
+                          <p class="byline first_seen">2小时前</p>
                          </div>
                         <p>路透11月30日 - 今年的网络星期一(Cyber Monday)料将成为美国线上购物史上表现最强劲的一天，销售金额上看114亿美元，因新冠疫情让无法出门的消费者转向网络满足假期购物需求。</p>
                     </div>
@@ -411,7 +564,7 @@
                         <h3>病险水库多达1.6万座 “十四五”将投资千亿除险加固</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>阮利民表示，今年洪涝灾害共损坏大型水库131座、小型水库1991座，其中许多被鉴定为病险水库</p>
                     </div>
@@ -422,7 +575,7 @@
                         <h3>苏宁易购电商平台业务融资60亿 深创投领投</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>云网万店整合重组了苏宁易购的平台业务，成立于今年11月11日，苏宁易购持股70%，战略投资者还包括商汤科技、分众传媒、华胜天成和上海交通</p>
                     </div>
@@ -433,7 +586,7 @@
                         <h3>财新11月份中国制造业PMI强劲升至54.9，创10年新高</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>财新11月份中国通用制造业PMI录得54.9，连续第七个月扩张，且较前值大幅上升，创2010年12月以来最高，显示制造业从年初新冠疫情中持续强劲复苏。</p>
                     </div>
@@ -444,7 +597,7 @@
                         <h3>居然之家定增36亿元 阿里小米等23个投资方认购</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>前三季度，居然之家扣非后净利润仅8.74亿元，不足全年业绩目标的40%</p>
                     </div>
@@ -455,7 +608,7 @@
                         <h3>日本三季度全行业经常利润同比减少28.4%</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>【共同社12月1日电】日本财务省1日公布的2020年三季度（7至9月）法人企业统计显示，除金融、保险业外的所有行业经常利润较上年同期减少28.4%至12.3984万亿日元（约合人民币7821亿元），连续6个季度同比减少。降幅较二季度（4至6月）的46.6%收窄。</p>
                     </div>
@@ -466,7 +619,7 @@
                         <h3>蔚来汽车是如何在走下神坛后重新崛起的？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>蔚来汽车曾与破产擦肩而过，后来又崛起为全球市值第四高的汽车制造商，这凸显出投资者对中国电动汽车初创企业的信心起伏不定。</p>
                     </div>
@@ -477,7 +630,7 @@
                         <h3>USJ任天堂园区明年2月开业! AR技术下与马里奥竞速(视频)</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">朝日</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>日本环球影城(USJ，大阪市)于11月30日宣布，以任天堂游戏角色“马里奥”等为主题的新园区“SUPER NINTENDO WORLD”的开业日期已定为2021年2月4日。当天，还向媒体相关人士首次公开了部分游乐设施。</p>
                     </div>
@@ -488,7 +641,7 @@
                         <h3>第三季全球智能手机销量跌幅收窄 小米首度超越苹果晋身三甲--Gartner</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>路透香港12月1日 - 市场研究机构Gartner发表数据显示，尽管5G手机的推出，加上各地政府对居家抗疫限制有所放松，但今年第三季全球智能手机需求仍然疲弱，对终端使用者的销售量按年下滑5.7%；三星与华为继续紧守首、次席，小米期内销售按年劲升35%，并首度超过苹果晋身三甲。</p>
                     </div>
@@ -499,7 +652,7 @@
                         <h3>中国外交官在Twitter发布的一张图片激怒澳大利亚</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">2小时前</p>
+                          <p class="byline first_seen">3小时前</p>
                          </div>
                         <p>中国外交部发言人赵立坚在Twitter上发布的一张图片显示，一名澳大利亚士兵明显用刀抵着一名阿富汗儿童的喉咙。澳大利亚总理表示图片是伪造的，并要求中国外交部和中国政府就这条不可接受的推文道歉。</p>
                     </div>
@@ -554,7 +707,7 @@
                         <h3>独家|紫光多笔债券将召开持有人会议 亡羊补牢</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">3小时前</p>
+                          <p class="byline first_seen">4小时前</p>
                          </div>
                         <p>拟追加增信担保措施、履行偿债保障措施、加强信息披露等内容</p>
                     </div>
@@ -565,7 +718,7 @@
                         <h3>《路透峰会》2021年企业违约风险将上升--罗素投资CIO</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">3小时前</p>
+                          <p class="byline first_seen">4小时前</p>
                          </div>
                         <p>路透伦敦11月30日 - 罗素投资(Russell Investments)固定收益和EMEA投资长(CIO)Gerard Fitzpatrick周一表示，明年企业违约风险将升温，但央行刺激措施和新冠疫苗将提供支持。</p>
                     </div>
@@ -576,7 +729,7 @@
                         <h3>奥运五环标志完成检修重回东京台场</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">3小时前</p>
+                          <p class="byline first_seen">4小时前</p>
                          </div>
                         <p>【共同社12月1日电】随着东京奥运会和残奥会延期至明年夏季，暂时从日本东京台场海滨公园（港区）内水上撤去的奥运五环纪念标志1日完成安全检查和维修后重新归位。五环标志将展示至明年8月奥运会结束，夜晚计划每天亮灯。</p>
                     </div>
@@ -620,7 +773,7 @@
                         <h3>监管机构称主要美元Libor将延用至2023年中期</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>路透华盛顿/伦敦/纽约11月30日 - 监管机构周一宣布，美国将比全球其他国家更晚弃用伦敦银行同业拆放款利率(Libor)，之前美国的银行业同意帮助编制这个名声受损的利率指标，直到2023年中期。</p>
                     </div>
@@ -631,7 +784,7 @@
                         <h3>《路透峰会》美股有望在2021年反弹 但特朗普构成风险--太平洋人寿</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>路透纽约11月30日 - 太平洋人寿基金顾问公司(Pacific Life Fund Advisors)的资产配置负责人Max Gokhman周一表示，美国股市有望在2021年反弹，受美国新一任总统的可预测性、新的刺激措施和基础设施支出以及新冠疫苗等因素提振。但有一个潜在的不确定因素：即将离任的总统特朗普。</p>
                     </div>
@@ -642,7 +795,7 @@
                         <h3>天齐锂业百亿债务暂获展期一个月</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>展期期间内，天齐锂业和银团双方将就进一步展期进行谈判，以修改或重述贷款协议；天齐锂业偿债压力或在2021-2022年集中到来</p>
                     </div>
@@ -653,7 +806,7 @@
                         <h3>独家|原包商银行深圳分行行长潘慧盛被警方刑拘</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>原包商银行深圳分行业务由徽商银行承接。11月25日，徽商银行深圳分行的法定代表人由潘慧盛变更为洪伟</p>
                     </div>
@@ -664,7 +817,7 @@
                         <h3>能源内参|中石油成立一家新公司 聚焦数字化转型；标普全球拟收购IHS Markit 后者价值440亿美元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>天齐锂业百亿债务获四周展期；中国中铁母公司董事长变更 陈云升任“一把手”；山东能源集团、兖矿集团办理合并交割事宜</p>
                     </div>
@@ -675,7 +828,7 @@
                         <h3>鲍威尔：美国经济前景“非常不确定”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">金融时报</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>美联储(Fed)主席杰伊•鲍威尔(Jay Powell)提醒美国国会，新型冠状病毒肺炎（COVID-19，即2019冠状病毒病）病例数量的上升可能“在未来几个月带来挑战”，尽管有关疫苗研发的令人鼓舞的消息提振了中期经济前景。</p>
                     </div>
@@ -686,7 +839,7 @@
                         <h3>11月财新中国制造业PMI跃升至10年高位 供需向好经济恢复持续加速（更新版）</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>(新增更多数据细节及评论)</p>
                     </div>
@@ -697,7 +850,7 @@
                         <h3>金正恩已接种中国提供的新冠疫苗--美国分析师</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>路透首尔12月1日 - 美国一位分析师周二引述日本两名未具名情报消息人士称，中国已经向朝鲜领导人金正恩及其家人提供了一种实验性新冠疫苗。</p>
                     </div>
@@ -708,7 +861,7 @@
                         <h3>特斯拉将被一次性纳入标普500指数 股价盘后涨4%</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>路透11月30日 - 特斯拉股价周一盘后涨4%；标普道琼斯指数有限公司宣布，特斯拉将在12月21日被一次性纳入标普500指数成分股。</p>
                     </div>
@@ -719,7 +872,7 @@
                         <h3>（更正）标普全球同意以440亿美元收购IHS Markit 为今年规模最大收购案</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>(修正：标题中的英文拼写有误，应为“IHS Markit”)</p>
                     </div>
@@ -730,7 +883,7 @@
                         <h3>写字楼租金：日本停止上涨，中国城市下跌</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>在调查的全球14个主要城市中，只有亚洲的3个城市写字楼租金上涨。降幅最大的是香港，中国大陆城市也在下跌…</p>
                     </div>
@@ -741,7 +894,7 @@
                         <h3>日本10月失业率升至3.1% 求人倍率改善</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>【共同社12月1日电】日本总务省1日公布的10月完全失业率（季节调整值）为3.1%，较上月上升0.1个百分点。完全失业人数同比增加51万人，达215万人，连续9个月增加。</p>
                     </div>
@@ -752,7 +905,7 @@
                         <h3>资金涌向股票，全球“牛市”频现</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">4小时前</p>
+                          <p class="byline first_seen">5小时前</p>
                          </div>
                         <p>11月，全球股市相继出现创记录的上涨。MSCI全球指数创出史上最高涨幅，日经平均指数也上涨至史上第3高的3456点。不过，由于迅速转向乐观情绪，股价出现报复性调整的风险也在提高…</p>
                     </div>
@@ -818,7 +971,7 @@
                         <h3>财新11月中国制造业PMI升至54.9创10年新高 新订单增速亦为10年高位</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>路透北京12月1日 - 财新/Markit周二联合公布，经季节性调整的11月中国制造业采购经理人指数(PMI)升至54.9，创下2010年11月以来的最高水平，远高于路透调查预估中值的53.5和上月的53.6。</p>
                     </div>
@@ -829,7 +982,7 @@
                         <h3>关键摇摆州完成计票认证 拜登开始听取总统每日简报</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>在特朗普及其团队指其选务存在争议、并发起法律诉讼挑战的7个关键摇摆州，拜登均已获得州政府认证的官方胜利</p>
                     </div>
@@ -840,7 +993,7 @@
                         <h3>Facebook将收购初创公司Kustomer，对其估值约10亿美元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>Facebook表示，将收购专门从事客户服务平台和聊天机器人的初创公司Kustomer，这是这家社交媒体巨头帮助企业利用其平台开展业务的努力的一部分。</p>
                     </div>
@@ -851,7 +1004,7 @@
                         <h3>亚股开高 上日因获利了结下跌后重拾升势</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>路透悉尼/纽约12月1日 - 亚洲股市周二略微开高，受到新冠疫苗面市前景的支撑，并扭转上日跌势。投资者在市场于11月破纪录涨势后锁定获利，打击市场周一下滑。</p>
                     </div>
@@ -862,7 +1015,7 @@
                         <h3>中国天齐锂业18.84亿美元并购贷款获一个月展期 此前曾临违约风险股价承压</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>路透上海12月1日 - 中国最大锂盐生产商天齐锂业周二公告，已到期的18.84亿美元银团并购贷款，获得展期一个月，至12月28日。此前该公司曾因此面临违约风险，令股价严重承压。</p>
                     </div>
@@ -873,7 +1026,7 @@
                         <h3>日本爱子公主19岁了</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>日本天皇夫妇之女爱子公主4月进入学习院大学文学系的日语日本文学专业学习，受疫情影响一直是上网课。据悉爱子一直祈愿疫情平息、国民能够恢复正常生活，学生也能去学校上学…</p>
                     </div>
@@ -884,7 +1037,7 @@
                         <h3>“后菅义伟”人选中岸田政治资金收入居首</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>【共同社12月1日电】对日本自民党前政务调查会长岸田文雄和前干事长石破茂等7名“后菅义伟”人选的收入进行公示的2019年政治资金收支报告30日公开。岸田以1.8188亿日元（约合人民币1147万元）居于首位。</p>
                     </div>
@@ -895,7 +1048,7 @@
                         <h3>每日更新：全球新冠疫情追踪</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">金融时报</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>新冠肺炎（COVID-19，即2019冠状病毒病）疫情造成的人道主义代价仍在继续攀升，截至北京时间12月1日上午10时，全球已有超过6318万人感染。目前已确认因该病毒而死亡的人数已超过146万人。</p>
                     </div>
@@ -906,7 +1059,7 @@
                         <h3>德企要把电动三轮车带到日本快递行业</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>RYTLE自主开发了一种转弯半径小、可在车身后部轻松装卸货物收纳箱的电动车辆。通过高效的货物装卸作业和路线方案，“最大可使配送距离和时间比卡车等运输方式减少45％”。运营成本可以压缩约4成…</p>
                     </div>
@@ -917,7 +1070,7 @@
                         <h3>伊朗称遇害核科学家是遭“新手段”暗杀</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>伊朗最高安全官员周一表示，上周遇害的伊朗核科学家法赫里扎德是在一次远程遥控行动中遭到伏击。这名官员描述称这是一场大胆的袭击。伊朗已指责以色列要对此次事件负责。</p>
                     </div>
@@ -925,12 +1078,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/O1vETP2qAiQ/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>早報：法國四名打人警察被起訴，政府擬修改禁止惡意發布警察圖像法條</h3>
+                        <h3>早报：法国四名打人警察被起诉，政府拟修改禁止恶意发布警察图像法条</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
-                        <p>法國四名警察因涉毆打非裔音樂製作人澤克勒（Michel Zecler），已遭刑事調查。 媒體週一援引司法人員消息指 ，四名涉事警察面臨「暴力執法」指控，其中兩人已還押候審。</p>
+                        <p>法国四名警察因涉殴打非裔音乐制作人泽克勒（Michel Zecler），已遭刑事调查。 媒体周一援引司法人员消息指 ，四名涉事警察面临「暴力执法」指控，其中两人已还押候审。</p>
                     </div>
                 </a>
                 
@@ -939,7 +1092,7 @@
                         <h3>日本拟2020年度设“出口产地”指定重点品类</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>【共同社12月1日电】日本政府11月30日召开旨在扩大农林水产品与食品出口的相关阁僚会议，正式敲定具体执行战略。核心内容为将牛肉、鰤鱼、清酒等日本拥有优势的27种产品指定为“重点品类”，在2020年度内根据海外需求设定各品类的“出口产地”并提供集中支援。</p>
                     </div>
@@ -950,7 +1103,7 @@
                         <h3>疫情进一步冲击对华贸易，朝鲜经济困境加深</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">纽约时报</p>
-                          <p class="byline first_seen">5小时前</p>
+                          <p class="byline first_seen">6小时前</p>
                          </div>
                         <p>今年前十个月，朝鲜从中国的进口额下降了76%，中国是该国唯一的主要贸易伙伴。官媒称金正恩“严厉批评”政府部门经济处理不当。此前他已承认五年增长计划失败。</p>
                     </div>
@@ -1005,7 +1158,7 @@
                         <h3>中国外管局发放年内第三轮42.96亿美元QDII额度 审批趋于常态化</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透上海12月1日 - 中国国家外汇管理局11月末再次发放合格境内机构投资者（QDII）额度，这已是年内第三轮，表明QDII额度审批趋于常态化。国家外管局周一稍晚发布的审批情况表显示，截至11月30日，QDII额度达1,166.99亿美元，上次新增（11月8日）后则为1,124.03亿美元，增加了42.96亿美元。</p>
                     </div>
@@ -1016,7 +1169,7 @@
                         <h3>今日开盘：小幅低开 沪指跌幅0.08%</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>沪指开盘报3388.99点，跌幅0.08%；深成指报13650.39点，跌幅0.14%</p>
                     </div>
@@ -1027,7 +1180,7 @@
                         <h3>财新PMI分析|制造业景气创十年来新高 政策退出仍需谨慎</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>生产、需求、原材料库存、就业等分项指数均创九年以上新高，复苏逐渐就业端传导，未来数月中国经济仍将延续修复态势，内外部环境不确定性犹存，宽松政策的逐步退出需要稳妥设计</p>
                     </div>
@@ -1038,7 +1191,7 @@
                         <h3>11月财新中国制造业PMI升至54.9 创十年来新高</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>制造业国内供需强劲复苏，外需改善幅度虽逊于内需，仍保持扩张；需求恢复带动企业增加用工，就业指数改善；预计疫情后经济复苏还将维持数月，宽松政策退出需稳妥设计</p>
                     </div>
@@ -1049,7 +1202,7 @@
                         <h3>澳大利亚谴责中国外交官挑衅推文，两国敌对情绪升级</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">纽约时报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>赵立坚发布的图片显示士兵把刀架在一名阿富汗儿童的脖子上，澳总理称其为“令人厌恶的诋毁”。中国长期以来通过聚焦他国人权问题转移外界对本国的批评。</p>
                     </div>
@@ -1060,7 +1213,7 @@
                         <h3>简报：中澳再现外交争端；亚洲异见人士为何支持特朗普</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">纽约时报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>印度农民抗议农业新政；病毒冲击对华贸易，朝鲜经济困局恶化；白宫揭晓圣诞装饰；东京证券交易所社长引咎辞职；比特币价格创历史新高……这里是今日要闻。</p>
                     </div>
@@ -1071,7 +1224,7 @@
                         <h3>韩中央防疫对策本部本部长郑银敬：下周单日新增确诊病例可能升至千例”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">韩民族日报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>韩国防疫部门表示，未来一两周，韩国单日新增新冠确诊病例可能达到700至1000例。随着扩散势头蔓向非首都圈，釜山等地也决定从下月1日起将防疫响应级别提升到第二阶段。</p>
                     </div>
@@ -1082,7 +1235,7 @@
                         <h3>华为孟晚舟在加被拘两年 中国驻加大使电话慰问并称“公道自在人心”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透北京12月1日 - 华为“长公主”孟晚舟被加拿大拘留整整两年。中国驻加拿大大使丛培武周一同孟晚舟通电话表达慰问。他指出“公道自在人心”，并称中国政府将继续敦促加拿大认真对待中国的严正立场和关切，纠正错误作法。</p>
                     </div>
@@ -1093,7 +1246,7 @@
                         <h3>香港将与内地在互联互通基础上 争取推出股票和债券相关衍生工具--金管局</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透香港12月1日 - 香港金融管理局总裁余伟文表示，未来境外投资者对人民币资产配置的需求将有长期上升趋势，对风险管理的需求增加；金管局下一步会和内地紧密合作，在互联互通的基础上，争取推出股票和债券相关的衍生工具，满足市场需求。</p>
                     </div>
@@ -1104,7 +1257,7 @@
                         <h3>市场热谈：中国不断释放积极入新群的信号 进入CPTPP的路怎么走？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透北京11月30日 - 从持“开放态度”到“积极考虑”，中国对加入CPTPP（全面与进步跨太平洋伙伴关系协定）抛出橄榄枝。现时虽然谈判尚未正式启动，但了解情况的人士指出，相关前期评估筹备工作已经进行。</p>
                     </div>
@@ -1115,7 +1268,7 @@
                         <h3>拜登任命美联储前主席叶伦担任财政部长 并公布其他多位高级经济顾问人选</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透威尔明顿11月30日 - 美国当选总统拜登周一公布了几个高级经济职位的人选，其中包括任命美国联邦储备委员会(美联储/FED)前主席叶伦担任财政部长，这为组建一个更加多元化的政府铺平了道路。</p>
                     </div>
@@ -1126,7 +1279,7 @@
                         <h3>Moderna将向FDA申请新冠疫苗使用授权</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>Moderna Inc.表示，周一将向美国和欧洲卫生监管机构提出申请，申请给予该公司的新冠疫苗使用授权，此前一项关键研究的全面分析显示，该疫苗的有效率为94.1%。</p>
                     </div>
@@ -1137,7 +1290,7 @@
                         <h3>美国宣布制裁中国电子进出口有限公司 称其支持委内瑞拉总统破坏民主的努力</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透华盛顿11月30日 - 美国周一宣布对中国电子进出口有限公司(CEIEC)实施制裁，指责该公司支持委内瑞拉总统马杜罗(Nicolas Maduro)破坏民主的努力。</p>
                     </div>
@@ -1148,7 +1301,7 @@
                         <h3>日本将在华通过网络宣传各地魅力</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>【共同社北京12月1日电】日本外务省与驻华大使馆11月30日宣布，12月将在中国通过“微博”实施宣传日本旅游景点及文化、饮食魅力的项目。总计50个地方政府将参加，发布介绍各地魅力的视频。</p>
                     </div>
@@ -1159,7 +1312,7 @@
                         <h3>穆迪称多数国家面临新冠疫情的“重大负面冲击”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透11月30日 - 美国穆迪投资者服务公司(Moody’s)周一对路透表示，多数国家面临新冠疫情的“重大负面冲击”，而近期疫苗试验取得进展并未改变该评级机构的预估。</p>
                     </div>
@@ -1170,7 +1323,7 @@
                         <h3>焦点：OPEC+将产量会议推迟到12月3日 因分歧犹存--消息人士</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透迪拜/伦敦/莫斯科11月30日 - 三位消息人士周一称，石油输出国组织(OPEC)和俄罗斯为首的盟国将2021年石油生产政策磋商推迟至周四，因为新冠疫情导致需求疲软之际，主要产油国对产量问题仍存在分歧。</p>
                     </div>
@@ -1181,7 +1334,7 @@
                         <h3>路透测算的人民币中间价料开在6.59元附近 较上日贬118点</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>路透北京12月1日 - 路透根据中国外汇交易中心(CFETS)公布的人民币汇率形成机制测算，人民币兑美元中间价周二预计会开在6.59元附近，较上日贬约118点。</p>
                     </div>
@@ -1192,7 +1345,7 @@
                         <h3>比特币打破2017年纪录，创下历史新高</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>比特币周一飙升，近三年来首次创下新纪录，超过了2017年12月18日创下的盘中纪录，因一波新投资者被巨大利润的潜力所吸引。</p>
                     </div>
@@ -1203,7 +1356,7 @@
                         <h3>埃克森美孚下调资本支出计划，拟大规模减记资产</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>在重新评估未来10年前景之际，陷入困境的埃克森美孚对之前的支出计划进行调整，并准备将资产账面价值减记最多200亿美元。</p>
                     </div>
@@ -1214,7 +1367,7 @@
                         <h3>在亚马逊仓库当工人是种什么样的体验？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">6小时前</p>
+                          <p class="byline first_seen">7小时前</p>
                          </div>
                         <p>新冠疫情之前，黛博拉·利杰格伦是一家广告公司的会计。而现在，她每天要在亚马逊仓储中心上11个小时班，分拣从湿纸巾到圣诞装饰品的各类货物。她坦言，现在的工作比以往任何时候都累。</p>
                     </div>
@@ -1225,20 +1378,9 @@
                         <h3>关于Moderna疫苗，我们知道些什么？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">6小时前</p>
-                         </div>
-                        <p>美国生物科技公司Moderna Inc.报告称，其研发的新冠疫苗的有效性达到94.1％，暗示这种疫苗可以预防带有某些症状的新冠病毒感染。该公司还表示其疫苗是安全的。下面是我们掌握和尚未掌握的信息。</p>
-                    </div>
-                </a>
-                
-                <a class="g-thing 日经" href="http://cn.nikkei.com/politicsaeconomy/politicsasociety/42937-2020-12-01-08-45-06.html" target="_blank">
-                    <div class="g-thing-wrapper">
-                        <h3>中日重启商务往来，赴日出差返回仍需两周观察</h3>
-                        <div style="text-align: center">
-                          <p class="byline publisher">日经</p>
                           <p class="byline first_seen">7小时前</p>
                          </div>
-                        <p>以短期出差和长期外派人员等为对象的两国间人员往来30日重启，提交新冠检测阴性证明和行动计划后可免除入境后的两周观察期。不过，从中国前往日本出差时，返回中国后仍须观察两周…</p>
+                        <p>美国生物科技公司Moderna Inc.报告称，其研发的新冠疫苗的有效性达到94.1％，暗示这种疫苗可以预防带有某些症状的新冠病毒感染。该公司还表示其疫苗是安全的。下面是我们掌握和尚未掌握的信息。</p>
                     </div>
                 </a>
                 
@@ -1280,7 +1422,7 @@
                         <h3>T早报|美团三季度经营溢利涨364.6%至67.24亿元；苏宁云网万店引入60亿元战略投资；中兴手机将回归中国消费者市场</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>推荐：外交部回应美政府拟将中芯国际等中企列入黑名单；京东方Ａ拟以增资75.5亿元方式实控成都中电熊猫</p>
                     </div>
@@ -1291,7 +1433,7 @@
                         <h3>美国将中国电子进出口有限公司列入黑名单</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>特朗普政府周一将中国电子进出口有限公司列入黑名单，称该公司向委内瑞拉出售商品，帮助总统马杜罗政权进行政治镇压。</p>
                     </div>
@@ -1302,7 +1444,7 @@
                         <h3>中国财经媒体报道汇总：郭树清：房地产是现阶段金融风险最大“灰犀牛”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>郭树清：对金融科技巨头采取特殊的创新监管办法；深圳官方回应“代持炒房”：正在调查，违规将严肃处理；渐进式延迟退休：可考虑科学调整法定退休年龄</p>
                     </div>
@@ -1313,7 +1455,7 @@
                         <h3>中国证监会主席：全面实行股票发行注册制 构建长期资金“愿意来、留得住”的环境</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>路透北京11月30日 - 中国证监会主席易会满发表文章称，全面实行股票发行注册制，拓宽直接融资入口；进一步健全退市制度，畅通多元退出渠道，建立常态化退市机制，强化优胜劣汰；大力推动长期资金入市，加快构建长期资金“愿意来、留得住”的市场环境。</p>
                     </div>
@@ -1324,7 +1466,7 @@
                         <h3>信越化学将建厂量产5G用途新型树脂</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>该公司将量产2019年面向5G用途新开发的双马来酰亚胺树脂，这种材料加热后会变硬…</p>
                     </div>
@@ -1335,7 +1477,7 @@
                         <h3>天皇夫妇长女爱子迎来19岁生日</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>【共同社12月1日电】日本天皇夫妇的长女爱子1日迎来了19岁生日。她4月进入学习院大学文学系的日语日本文学专业学习，但因为新冠疫情一直在线听课。</p>
                     </div>
@@ -1346,7 +1488,7 @@
                         <h3>美国劳工部周度报告被指对领取失业救济人数的估计"存在缺陷”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>一家政府监管机构周一表示，在新冠病毒大流行期间，美国向失业工人提供失业福利的体系一直出现不准确的数据，并向一些工人提供了低于适当水平的补贴。</p>
                     </div>
@@ -1357,7 +1499,7 @@
                         <h3>中国银保监会郭树清：承诺低风险高收益就是诈骗 房地产是最大“灰犀牛”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>路透北京11月30日 - 中国央行党委书记、银保监会主席郭树清表示，承诺低风险高收益就是诈骗，要对金融科技巨头，采取特殊的创新监管办法；房地产是现阶段中国金融风险方面最大的“灰犀牛”，坚决抑制房地产泡沫。</p>
                     </div>
@@ -1368,7 +1510,7 @@
                         <h3>世卫组织总干事呼吁各国“不要将新冠病毒溯源政治化”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>路透日内瓦11月30日 - 世界卫生组织(WHO)总干事谭德塞周一敦促各国不要将新冠病毒溯源政治化，因为这将给了解真相制造障碍。</p>
                     </div>
@@ -1379,7 +1521,7 @@
                         <h3>拜登选择奥巴马前顾问Brian Deese出任首席经济顾问</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>据知情人士透露，美国候任总统拜登已选择奥巴马的前顾问Brian Deese出任国家经济委员会主任。</p>
                     </div>
@@ -1390,7 +1532,7 @@
                         <h3>全球正大肆举债，发债规模破纪录</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>企业和政府今年发行了创纪录的9.7万亿美元债券和其他债务，因来自美联储和其他央行的超常支持助推了一场借贷盛宴。</p>
                     </div>
@@ -1401,7 +1543,7 @@
                         <h3>美联储将四项紧急贷款计划延长至明年3月底</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">7小时前</p>
+                          <p class="byline first_seen">8小时前</p>
                          </div>
                         <p>美联储周一表示，已将四项支持性贷款计划延长至明年3月底，这些计划在今年春季冠状病毒大流行时帮助稳定了短期融资市场。</p>
                     </div>
@@ -1522,7 +1664,7 @@
                         <h3>美元从逾两年最低回升 但月线仍创7月来最大百分比跌幅</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>路透纽约11月30日 - 美元周一从逾两年半最低回升，因广泛的风险人气再次恶化，华尔街股市下跌，投资者对美国经济数据转弱以及另一项刺激计划缺乏任何进展感到沮丧。</p>
                     </div>
@@ -1533,7 +1675,7 @@
                         <h3>美股收低 但标普500指数录得史上最佳11月表现</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>路透11月30日 - 美国股市标普500指数周一收低，因投资者在近几周大幅上涨后获利了结，该指数录得有史以来最好的11月表现。</p>
                     </div>
@@ -1544,7 +1686,7 @@
                         <h3>油价在OPEC+讨论明年产量政策之际下跌 本月创5月来最大月线涨幅</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>路透纽约11月30日 - 油价周一小幅下跌，全球主要石油生产国在本周的磋商中讨论延长当前的大幅减产协议。但基于对新冠疫苗将很快上市的希望，指标原油价格在本月强劲上扬。</p>
                     </div>
@@ -1555,7 +1697,7 @@
                         <h3>金价录得2016年以来最差月度表现 受疫苗乐观情绪拖累</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>路透11月30日 - 黄价周一跌至五个月低点，并有可能录得四年来最糟糕的月线表现。对疫苗推动经济迅速复苏的乐观情绪，削弱了黄金的避险吸引力。</p>
                     </div>
@@ -1566,7 +1708,7 @@
                         <h3>中概股简报：中海油股价大跌14%，公司紧急公告：尚未收到正式制裁通知</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>美国众议院将就要求中概股遵守美国审计规定的法案投票；阿里上汽合资成立“智己”汽车；何小鹏泼冷水：去掉稳定和利润走不远；虾米或将关闭，在线音乐步入寡头时代</p>
                     </div>
@@ -1577,7 +1719,7 @@
                         <h3>道指11月创下30多年最大月度涨幅</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">8小时前</p>
+                          <p class="byline first_seen">9小时前</p>
                          </div>
                         <p>美国股市周一下滑，但11月大涨，为一个月来的狂涨画上了句号，因为人们押注科学家们比以往任何时候都更接近最终研制出新冠疫苗。</p>
                     </div>
@@ -1698,7 +1840,7 @@
                         <h3>美团投资理想获利58亿元 王兴称生鲜等“有得打”</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">16小时前</p>
+                          <p class="byline first_seen">17小时前</p>
                          </div>
                         <p>营收354.01亿元，同比增长28.8%；经营溢利67.24亿元，同比大涨364.6%，主要得益于理想汽车上市等带来的投资收益</p>
                     </div>
@@ -1709,7 +1851,7 @@
                         <h3>耶伦获提名为美国首位女性财长 前路挑战重重</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">16小时前</p>
+                          <p class="byline first_seen">17小时前</p>
                          </div>
                         <p>若任命最终获得通过，耶伦领导的美国财政部将立即面临新冠疫情攀升导致的经济复苏乏力、就业增长缓慢等多重挑战。预计在推动两党分歧严重的美国国会出台新一轮经济刺激方案上，耶伦也将发挥关键作用</p>
                     </div>
@@ -1720,7 +1862,7 @@
                         <h3>拜登推出财经团队人选 进步色彩鲜明族裔性别多元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">16小时前</p>
+                          <p class="byline first_seen">17小时前</p>
                          </div>
                         <p>其经济顾问以女性为主，有非裔、印度裔等多个少数族裔面孔。多数人选都深度参与了2008年金融危机后期美国经济重建的决策和实施</p>
                     </div>
@@ -1731,7 +1873,7 @@
                         <h3>中国海陆空货运出口均“一箱难求” 海运运价创历史新高</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">17小时前</p>
+                          <p class="byline first_seen">18小时前</p>
                          </div>
                         <p>疫情导致全球贸易极度不平衡，中国海运、空运、铁路出口集装箱紧缺，船东、货主均一筹莫展；多重因素叠加，中国出口海运运价创历史新高</p>
                     </div>
@@ -1742,7 +1884,7 @@
                         <h3>独家|工行拟再提一位副行长 国际部总经理张伟武被考察</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">17小时前</p>
+                          <p class="byline first_seen">18小时前</p>
                          </div>
                         <p>张伟武有望成为2020年工行自内部提拔的第三位副行长，该行即将迎来“一正五副”的高管架构</p>
                     </div>
@@ -1753,7 +1895,7 @@
                         <h3>央行超预期MLF操作稳定中期利率 存单利率或见顶</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">17小时前</p>
+                          <p class="byline first_seen">18小时前</p>
                          </div>
                         <p>央行通过MLF向市场提供中期资金，有助于平抑一年期国债、半年及以上同业存单等中期市场利率的波动，有助于缓解银行负债压力</p>
                     </div>
@@ -1761,57 +1903,57 @@
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3157637-%E6%96%A5%E5%8F%B8%E6%B3%95%E9%83%A8%E8%81%AF%E8%AA%BF%E5%B1%80%E8%A2%96%E6%89%8B%E6%97%81%E8%A7%80+%E7%89%B9%E6%9C%97%E6%99%AE%E5%8F%97%E8%A8%AA%E5%A0%85%E7%A8%B1%E9%81%B8%E8%88%89%E8%88%9E%E5%BC%8A" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>斥司法部聯調局袖手旁觀 特朗普受訪堅稱選舉舞弊</h3>
+                        <h3>斥司法部联调局袖手旁观 特朗普受访坚称选举舞弊</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">18小时前</p>
                          </div>
-                        <p>總統特朗普公開批評司法部和聯邦調查局（FBI），在自己的「選舉抗爭」中袖手旁觀，懷疑兩個部門「有份操縱選舉」，又指民主黨已經學會「作弊」，長此放任不管的話，國家不會再有共和黨籍總統或議員。</p>
+                        <p>总统特朗普公开批评司法部和联邦调查局（FBI），在自己的「选举抗争」中袖手旁观，怀疑两个部门「有份操纵选举」，又指民主党已经学会「作弊」，长此放任不管的话，国家不会再有共和党籍总统或议员。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3157640-%E6%8B%9C%E7%99%BB%E7%B5%84%E5%85%A8%E5%A5%B3%E7%8F%AD%E5%82%B3%E8%A8%8A%E5%9C%98%E9%9A%8A+%E9%9D%9E%E8%A3%94%E9%A6%96%E6%93%94%E9%A6%96%E5%B8%AD%E7%B6%93%E6%BF%9F%E9%A1%A7%E5%95%8F" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>拜登組全女班傳訊團隊 非裔首擔首席經濟顧問</h3>
+                        <h3>拜登组全女班传讯团队 非裔首担首席经济顾问</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">18小时前</p>
                          </div>
-                        <p>宣布勝選的民主黨總統候選人拜登與副總統候選人賀錦麗，繼續宣布新政府的人事任命，白宮傳訊團隊將清一色由女性組成。外界同時預料，白宮經濟顧問和預算辦公室主管這兩個要職，將破天荒由少數族裔擔任。</p>
+                        <p>宣布胜选的民主党总统候选人拜登与副总统候选人贺锦丽，继续宣布新政府的人事任命，白宫传讯团队将清一色由女性组成。外界同时预料，白宫经济顾问和预算办公室主管这两个要职，将破天荒由少数族裔担任。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3157643-11%E6%9C%88%E6%96%B0%E5%A2%9E400%E8%90%AC%E6%96%B0%E5%86%A0%E7%97%85%E4%BE%8B+%E4%BC%BC50%E5%B7%9E%E5%90%8C%E6%99%82%E7%99%BC%E7%94%9F%E8%87%AA%E7%84%B6%E7%81%BD%E5%AE%B3" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>11月新增400萬新冠病例 似50州同時發生自然災害</h3>
+                        <h3>11月新增400万新冠病例 似50州同时发生自然灾害</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">18小时前</p>
                          </div>
-                        <p>雖然距離11月結束還有3天，全美當月的新增新冠病例已經超過400萬宗，為10月190萬宗紀錄的逾兩倍。更令人擔心的是，隨著感恩節假期外出旅遊的人返家，新冠病毒的傳播速度及範圍將加快，專家表示，這幾乎相當於全美50個州同時發生自然災害。</p>
+                        <p>虽然距离11月结束还有3天，全美当月的新增新冠病例已经超过400万宗，为10月190万宗纪录的逾两倍。更令人担心的是，随著感恩节假期外出旅游的人返家，新冠病毒的传播速度及范围将加快，专家表示，这几乎相当于全美50个州同时发生自然灾害。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3157646-%E5%A8%81%E5%B7%9E%E6%9C%80%E7%B5%82%E9%BB%9E%E7%A5%A8%E7%B5%90%E6%9E%9C%E5%86%8D%E6%AC%A1%E7%A2%BA%E8%AA%8D%E6%8B%9C%E7%99%BB%E5%8B%9D%E5%87%BA" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>威州最終點票結果
-再次確認拜登勝出</h3>
+                        <h3>威州最终点票结果
+再次确认拜登胜出</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">18小时前</p>
                          </div>
-                        <p>威斯康辛州完成重新點票後，再次確認民主黨總統候選人拜登勝出，甚至拜登的得票略有增加。總統特朗普表示會繼續發起訴訟，尋找這次大選中是否有人非法投票。</p>
+                        <p>威斯康辛州完成重新点票后，再次确认民主党总统候选人拜登胜出，甚至拜登的得票略有增加。总统特朗普表示会继续发起诉讼，寻找这次大选中是否有人非法投票。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3157648-%E9%80%97%E7%8B%97%E5%A4%B1%E8%B6%B3%E8%B7%8C%E5%80%92+%E6%8B%9C%E7%99%BB%E8%BC%95%E5%BE%AE%E9%AA%A8%E8%A3%82" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>逗狗失足跌倒 拜登輕微骨裂</h3>
+                        <h3>逗狗失足跌倒 拜登轻微骨裂</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">18小时前</p>
                          </div>
-                        <p>拜登與家中的寵物狗玩耍時失足跌倒，導致腳部輕微骨裂，醫生表示傷勢不至於影響工作。總統特朗普則在推特發文，祝願拜登早日康復。綜合CNN與霍士新聞報道，拜登的主診醫生奧康納（Kevin O‘Connor）29日發表聲明，表示拜登腳掌中部出現「髮絲狀骨裂」，未來數星期需要穿著復康保護鞋（walking boot），但可以正常處理公務。奧康納解釋，拜登日前在家中和寵物狗玩耍時扭傷腳踝，最初接受X光掃描時並沒有發現骨骼損傷，但為了謹慎起見又進行電腦斷層掃描，因此發現髮絲狀骨裂。</p>
+                        <p>拜登与家中的宠物狗玩耍时失足跌倒，导致脚部轻微骨裂，医生表示伤势不至于影响工作。总统特朗普则在推特发文，祝愿拜登早日康复。综合CNN与霍士新闻报道，拜登的主诊医生奥康纳（Kevin O‘Connor）29日发表声明，表示拜登脚掌中部出现「发丝状骨裂」，未来数星期需要穿著复康保护鞋（walking boot），但可以正常处理公务。奥康纳解释，拜登日前在家中和宠物狗玩耍时扭伤脚踝，最初接受X光扫描时并没有发现骨骼损伤，但为了谨慎起见又进行电脑断层扫描，因此发现发丝状骨裂。</p>
                     </div>
                 </a>
                 
@@ -1842,7 +1984,7 @@
                         <h3>外交部回应澳总理言论：澳方应向阿富汗人民正式道歉</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">18小时前</p>
+                          <p class="byline first_seen">19小时前</p>
                          </div>
                         <p>澳政府应该做的是深刻反思并将凶手绳之以法，向阿富汗人民作出正式道歉，并向国际社会郑重承诺永远不再犯这种可怕罪行</p>
                     </div>
@@ -1853,7 +1995,7 @@
                         <h3>三只银行股被调出上证50 “大象起舞”现分化</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">18小时前</p>
+                          <p class="byline first_seen">19小时前</p>
                          </div>
                         <p>上证50指数是以上证180成分股为样本空间，按照最近一年总市值、成交金额进行综合排名，被调出的三只银行股总市值依然相对可观，但成交普遍低迷</p>
                     </div>
@@ -1876,7 +2018,7 @@
                         <h3>日中恢复商务往来 疫情蔓延中经济效果难料</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">19小时前</p>
+                          <p class="byline first_seen">20小时前</p>
                          </div>
                         <p>【共同社11月30日电】日中两国政府30日开始受理作为新冠防疫措施此前限制的商务相关人士的签证申请，重启了人员往来。日方期待对疫情导致下滑的经济起到拉动效果，但日本国内疫情正再次蔓延，实际上人员往来能否变得活跃尚未可知。</p>
                     </div>
@@ -1887,7 +2029,7 @@
                         <h3>详讯：“东京-北京论坛”线上开幕</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">19小时前</p>
+                          <p class="byline first_seen">20小时前</p>
                          </div>
                         <p>【共同社11月30日电】日中两国政商界人士及专家讨论安全保障和外交议题的“东京-北京论坛”11月30日以网络会议形式举行。24～25日访日的中国国务委员兼外交部长王毅对于30日恢复了两国之间商务人士往来表示期待称，此举将“助力经济复苏”。</p>
                     </div>
@@ -1898,7 +2040,7 @@
                         <h3>信美相互首创一次性给付医疗险 70岁以下均可投保</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">19小时前</p>
+                          <p class="byline first_seen">20小时前</p>
                          </div>
                         <p>赔付方式为一次性给付，对疾病数量和严重程度没有限制，60—70岁老年人群对应30万元保额</p>
                     </div>
@@ -1909,7 +2051,7 @@
                         <h3>报道：特朗普政府将把中芯国际和中国海洋石油加入出口黑名单</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">20小时前</p>
+                          <p class="byline first_seen">21小时前</p>
                          </div>
                         <p>路透周日报道，特朗普政府将把中芯国际和石油巨头中国海洋石油加入出口黑名单，称这两家公司为中国军方所有或控制。</p>
                     </div>
@@ -1920,7 +2062,7 @@
                         <h3>京东健康IPO的国际发售部分拟提前一天结束</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">20小时前</p>
+                          <p class="byline first_seen">21小时前</p>
                          </div>
                         <p>京东健康拟周一结束国际发售部分的认购，比计划提前一天。该公司是京东集团控股的在线医疗健康企业。</p>
                     </div>
@@ -1931,7 +2073,7 @@
                         <h3>东证社长就股票交易系统故障引咎辞职</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">20小时前</p>
+                          <p class="byline first_seen">21小时前</p>
                          </div>
                         <p>【共同社11月30日电】围绕日本交易所集团（JPX）旗下东京证券交易所10月发生的系统障碍，JPX30日宣布，东证社长宮原幸一郎（63岁）当天辞职。此举是为导致史无前例的全天停止所有股票交易一事承担责任，JPX高层等也一律被作出减薪处分。</p>
                     </div>
@@ -1942,7 +2084,7 @@
                         <h3>香港特首宣布采取最严厉措施应对第四波疫情 但不拟全民强制检测或封城（更新版）</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">20小时前</p>
+                          <p class="byline first_seen">21小时前</p>
                          </div>
                         <p>（新增更多记者会内容及确诊个案细节）</p>
                     </div>
@@ -1953,7 +2095,7 @@
                         <h3>厚劳省新冠咨询窗口将新增7种语言</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">20小时前</p>
+                          <p class="byline first_seen">21小时前</p>
                          </div>
                         <p>【共同社11月30日电】日本厚生劳动省30日宣布，新冠疫情相关电话咨询窗口将实现多语种化，在原有的日语之外增加英语、汉语等7种语言。该服务从12月1日起推出，全年365天受理咨询。</p>
                     </div>
@@ -1961,12 +2103,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/06iOr3J7tmo/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>晚報：澳洲總理莫里森批評趙立堅發佈虛假圖片，要求中國外交部道歉</h3>
+                        <h3>晚报：澳洲总理莫里森批评赵立坚发布虚假图片，要求中国外交部道歉</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">21小时前</p>
                          </div>
-                        <p>中國外交部發言人趙立堅於 Twitter 上載一幅漫畫，藉以譴責「澳洲士兵謀殺阿富汗平民和囚犯」。澳洲總理莫里森（Scott Morrison）批評趙立堅發佈「令人反感」的「虛假圖片」，指中國政府應為此感到「羞恥」，要求中國外交部道歉。</p>
+                        <p>中国外交部发言人赵立坚于 Twitter 上载一幅漫画，借以谴责「澳洲士兵谋杀阿富汗平民和囚犯」。澳洲总理莫里森（Scott Morrison）批评赵立坚发布「令人反感」的「虚假图片」，指中国政府应为此感到「羞耻」，要求中国外交部道歉。</p>
                     </div>
                 </a>
                 
@@ -1975,7 +2117,7 @@
                         <h3>解析新老“锂王”之争/华为受制裁的“红利”小米还能吃多久|数据精华</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>【本文为财新数据通用户专享内容导读】“昔日锂王”天齐锂业深陷债务危机，“现任锂王”赣锋锂业则逆势扩张。随着锂周期见底回升，天齐锂业短期仍难重回“锂王之位”；在疫情和华为受制裁的双重作用下，小米实现国内国外双逆袭，但小米接下来的路要怎么走</p>
                     </div>
@@ -1986,7 +2128,7 @@
                         <h3>最新海外疫情：新冠感染超6263万 累计死亡超145万</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>11月29日，中国之外217个国家和地区有感染病例，累计感染者过千例的已达到160个；美国累计感染约1338万例全球居首，印度超943万例、巴西超631万例分列二三位；非洲确诊超千例国家已48个，欧洲43个，亚洲38个，美洲29个，大洋洲2个</p>
                     </div>
@@ -1997,7 +2139,7 @@
                         <h3>新三板转板条件明确  精选层个股行情分化</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>受转板制度落地利好影响，11月30日，精选层个股全部收红</p>
                     </div>
@@ -2008,7 +2150,7 @@
                         <h3>香港的司法体系还能保持独立多久？</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">纽约时报</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>中共正进一步加强对香港司法机构的控制。北京官媒抱怨“黄丝法官”袒护抗议者；官员呼吁全面改革法院。目前尚有独立性的香港法官已成为一场至关重要的斗争的核心。</p>
                     </div>
@@ -2019,7 +2161,7 @@
                         <h3>瑞士信贷监视的员工数量比之前披露的要多</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>瑞士信贷集团董事会在去年一起监视丑闻后聘请的律师发现，早些时候有另外两起员工被私家侦探跟踪的案例，尽管该行坚称不会容忍人身监控。</p>
                     </div>
@@ -2030,7 +2172,7 @@
                         <h3>OPEC+将讨论展延减产3-4个月或逐步增加产出--消息（更新版）</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">21小时前</p>
+                          <p class="byline first_seen">22小时前</p>
                          </div>
                         <p>(新增更多内容)</p>
                     </div>
@@ -2041,7 +2183,7 @@
                         <h3>涉嫌协助违规发债  东海基金被交易商协会自律调查</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>多位市场人士称，海通证券操作结构化发债的通道之一就是东海基金的基金专户</p>
                     </div>
@@ -2052,7 +2194,7 @@
                         <h3>美团第三季度净利润增长逾三倍</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>美团周一表示，第三季度净利润增长逾三倍，得益于其投资上市实体的公允价值收益。</p>
                     </div>
@@ -2063,7 +2205,7 @@
                         <h3>独家：特朗普将把中芯国际和中海油加入国防部黑名单--消息（更新版2）</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>(新增股价反应，中海油及中国外交部评论)</p>
                     </div>
@@ -2074,7 +2216,7 @@
                         <h3>中国外交部称对美国在涉港问题上表现恶劣的四人实施制裁，禁止入港澳</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>路透北京11月30日 - 在美国宣布再制裁四名中港官员后，中国亦作出反击，中国外交部周一表示，针对美方的错误行径，决定对美方在涉港问题上表现恶劣的四人实施制裁，有关人士将被禁止进入香港和澳门。</p>
                     </div>
@@ -2085,7 +2227,7 @@
                         <h3>日经指数11月累计涨幅为历史第三高</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>【共同社11月30日电】东京股市日经指数30日回落。终盘下跌211.09点至26433.62点，跌幅为0.79%。</p>
                     </div>
@@ -2096,7 +2238,7 @@
                         <h3>金融厅要求银行为年底资金周转提供支援</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">共同社（日）</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>【共同社11月30日电】为了给中小企业的资金周转提供支援，日本金融厅30日同银行业召开意见交流会。在新冠疫情蔓延导致经济环境日趋严峻的情况下，此举是为了在资金需求高涨的年底前促使银行向企业顺利放贷。</p>
                     </div>
@@ -2107,7 +2249,7 @@
                         <h3>“他说如果他是我，他会自杀”——ABC残障记者自述经历</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">ABC中文（澳）</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>作为残障人士，ABC记者纳丝·坎帕内拉用自己的亲身经历告诉我们社会对残障人士的看法。</p>
                     </div>
@@ -2118,7 +2260,7 @@
                         <h3>购汇需求下人民币收创逾一周低点 美指偏弱限制调整空间</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">22小时前</p>
+                          <p class="byline first_seen">23小时前</p>
                          </div>
                         <p>路透北京/上海11月30日 - 人民币兑美元即期周一收盘小跌4点至11月19日以来新低，盘中汇价一度下探至逾半个月新低，中间价亦小跌；交易员表示，美联储将采取取更多宽松措施的预期推低美指至逾两年低点，但月末客盘购汇需求仍较多，美指偏弱并没有提振人民币人气，短期人民币料延续震荡走势。</p>
                     </div>
@@ -2148,12 +2290,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/-s1JynE4VPk/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>知華派謝淑麗：美國需要自我療傷，但更有智慧的策略是繼續開放</h3>
+                        <h3>知华派谢淑丽：美国需要自我疗伤，但更有智慧的策略是继续开放</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">23小时前</p>
                          </div>
-                        <p>「我想拜登政府尋求的是一種更實際的處理對華關係的方法，少一些意識形態化。」</p>
+                        <p>「我想拜登政府寻求的是一种更实际的处理对华关系的方法，少一些意识形态化。」</p>
                     </div>
                 </a>
                 
@@ -2162,7 +2304,7 @@
                         <h3>秋筱宫殿下“认可”长女真子公主结婚 作为父母尊重本人意愿</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">朝日</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>现处天皇陛下皇位继承第1顺位的“皇嗣”秋筱宫殿下，于11月30日迎来了55岁生日，并在此之前召开了记者会。关于目前结婚延期的长女·真子公主(29岁)与小室圭(29岁)，秋筱宫殿下说道“认可结婚一事”，并表示尊重2人的想法。</p>
                     </div>
@@ -2173,7 +2315,7 @@
                         <h3>拜登宣布白宫传播高官任命 史上首次全由女性担纲</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>外界期待这批观点多元、媒体事务经验丰富的白宫联络沟通官员，能让白宫回归更传统和稳定的与媒体打交道的方式，并丰富华盛顿政府叙事中的女性视角</p>
                     </div>
@@ -2184,7 +2326,7 @@
                         <h3>美执法部门盘问中企人员是否为党员 外交部：严重政治挑衅</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">财新</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>一段时间以来，美执法人员多次突击检查中方航运企业人员，并且对中方多架次赴美航班的机组人员问询、盘查，甄别他们的共产党员身份。华春莹回应称，美方有关做法挑动意识形态对立，破坏中美正常人员往来</p>
                     </div>
@@ -2195,7 +2337,7 @@
                         <h3>分析：中国央行MLF意外“加餐”放长钱 助降银行成本降准暂无望</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>路透上海11月30日 - 面对高企的同业存单利率，中国央行周一意外“加餐”，进行了本月第二次中期借贷便利（MLF）操作。业内人士称，在信用债违约忧虑缓解后，央行打破今年以来每月仅一次MLF操作惯例再投长钱，帮助银行降低资金成本，最终目的在于给实体经济融资提供良好的外部条件。</p>
                     </div>
@@ -2206,7 +2348,7 @@
                         <h3>中国11月份PMI数据显示复苏范围扩大</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">华尔街日报</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>衡量中国制造业和非制造业活动的指标分别攀升至三年来和八年来的最高水平，显示在新冠疫情开始蔓延近一年后，中国的复苏范围正在扩大。</p>
                     </div>
@@ -2217,7 +2359,7 @@
                         <h3>苹果因为商业行为不当遭意大利罚款1000万欧元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>路透罗马11月30日 - 意大利反垄断主管机关周一表示，已经对苹果罚款1,000万欧元(1,200万美元)，因其贩售iPhone商业手法具有“侵略性及误导性”。</p>
                     </div>
@@ -2228,7 +2370,7 @@
                         <h3>中海油回应美国制裁黑名单称：控股股东尚未收到有关通知</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>路透香港11月30日 - 中国海洋石油有限公司周一称，经向其控股股东--中国海洋石油集团有限公司(中国海油)查询，对方尚未收到有关通知或决定，可能会被美国政府机构加入涉嫌与中国军方有联系的企业黑名单。</p>
                     </div>
@@ -2239,7 +2381,7 @@
                         <h3>李洛渊、尹锡悦、李在明支持率差距缩小…前三位之间仅相差1.2个百分点</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">韩民族日报</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>在有关下届总统热门人选的支持率调查中，共同民主党党首李洛渊、检察总长尹锡悦、京畿道知事李在明在误差范围内展开混战。</p>
                     </div>
@@ -2250,7 +2392,7 @@
                         <h3>针对美国对中方赴美人员问询排查鉴别共产党员身份 中国外交部称向美方提出严正交涉</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>路透北京11月30日 - 针对美国对中方赴美人员问询排查鉴别共产党员身份，中国外交部发言人华春莹周一表示，向美方提出严正交涉，停止有关错误行径，停止意识形态对立，停止对中方的无理打压。</p>
                     </div>
@@ -2261,7 +2403,7 @@
                         <h3>中国股市收低但月线收高5% 数据显示经济复苏动能加速集聚</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">路透</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>路透上海11月30日 - 中国股市周一收低，但11月月线收高，受传统工业股涨势支撑，且有更多数据显示疫情背景下的中国经济在持续复苏。</p>
                     </div>
@@ -2272,7 +2414,7 @@
                         <h3>东京奥运会的防疫费用将达900亿日元</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">日经</p>
-                          <p class="byline first_seen">23小时前</p>
+                          <p class="byline first_seen">1天前</p>
                          </div>
                         <p>最早将于12月下旬公布另外计入追加经费和防疫费用的新预算。防疫将主要由日本政府负担…</p>
                     </div>
@@ -3073,12 +3215,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/IoU33sz61A4/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>早報：國際紅十字會指埃塞俄比亞衝突造成傷病嚴重，醫療物資緊缺</h3>
+                        <h3>早报：国际红十字会指埃塞俄比亚冲突造成伤病严重，医疗物资紧缺</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>國際紅十字會週日從埃塞俄比亞（台稱衣索比亞）北部提格雷州首府默克萊（Mekelle） 發出報告 ，指當地傷病情況嚴重，醫療物資緊缺。</p>
+                        <p>国际红十字会周日从埃塞俄比亚（台称衣索比亚）北部提格雷州首府默克莱（Mekelle） 发出报告 ，指当地伤病情况严重，医疗物资紧缺。</p>
                     </div>
                 </a>
                 
@@ -3579,12 +3721,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/rk8_w_63lvg/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>艾朗·索堅的政治宣講與憤怒的左派：芝加哥七君子的審判</h3>
+                        <h3>艾朗·索坚的政治宣讲与愤怒的左派：芝加哥七君子的审判</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>時間線的嵌套交織和密佈的台詞也蓋不住索堅強烈主觀的立場，《芝加哥七人案》是左派的憤怒？</p>
+                        <p>时间线的嵌套交织和密布的台词也盖不住索坚强烈主观的立场，《芝加哥七人案》是左派的愤怒？</p>
                     </div>
                 </a>
                 
@@ -3711,125 +3853,125 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/QE4QKODDPW8/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>在倫敦，一位香港建築師的木教堂：捧起移民者曾被踐踏如草芥的生命</h3>
+                        <h3>在伦敦，一位香港建筑师的木教堂：捧起移民者曾被践踏如草芥的生命</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>移民社群離開家鄉奔赴新地，會經歷大幅度的時間和空間的置換，建築物就成為較不暫時卻又靈活流動的容器⋯⋯</p>
+                        <p>移民社群离开家乡奔赴新地，会经历大幅度的时间和空间的置换，建筑物就成为较不暂时却又灵活流动的容器⋯⋯</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156046-CDC%E5%B0%87%E8%88%89%E8%A1%8C%E7%B7%8A%E6%80%A5%E6%9C%83%E8%AD%B0++%E5%95%86%E5%84%AA%E5%85%88%E6%8E%A5%E7%A8%AE%E7%96%AB%E8%8B%97%E6%AC%A1%E5%BA%8F" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>CDC將舉行緊急會議  
-商優先接種疫苗次序</h3>
+                        <h3>CDC将举行紧急会议  
+商优先接种疫苗次序</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>疾病預防及控制中心（CDC）將於12月1日舉行緊急會議，商議一旦有新冠肺炎疫苗獲得授權使用，誰應該最先接種，醫護及護理機構人員可能獲優先注射。</p>
+                        <p>疾病预防及控制中心（CDC）将于12月1日举行紧急会议，商议一旦有新冠肺炎疫苗获得授权使用，谁应该最先接种，医护及护理机构人员可能获优先注射。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156048-%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5%E6%8E%92%E9%99%A4%E9%9D%9E%E6%B3%95%E7%A7%BB%E6%B0%91++%E9%AB%98%E9%99%A2%E5%90%8C%E6%84%8F%E5%AF%A9%E7%90%86%E6%94%BF%E5%BA%9C%E8%A6%81%E6%B1%82" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>人口普查排除非法移民  高院同意審理政府要求</h3>
+                        <h3>人口普查排除非法移民  高院同意审理政府要求</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>聯邦最高法院同意審理，非法移民是否納入人口普查數據的爭議。人口普查數據是分配國會議席及聯邦撥款的依據，特朗普政府一直主張剔除數百萬名非法移民所佔份額，但多次遭到下級法院否決。</p>
+                        <p>联邦最高法院同意审理，非法移民是否纳入人口普查数据的争议。人口普查数据是分配国会议席及联邦拨款的依据，特朗普政府一直主张剔除数百万名非法移民所占份额，但多次遭到下级法院否决。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156050-%E9%BB%91%E4%BA%94%E7%B6%B2%E8%B3%BC%E9%A1%8D%E5%8B%81%E5%8D%87%E5%85%A9%E6%88%90+%E5%AF%A6%E9%AB%94%E5%BA%97%E6%B6%88%E8%B2%BB%E5%A4%A7%E6%B8%9B%E4%B8%80%E5%8D%8A" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>黑五網購額勁升兩成 實體店消費大減一半</h3>
+                        <h3>黑五网购额劲升两成 实体店消费大减一半</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>新冠疫情的陰影下，27日「黑色星期五」的網上購物刷新紀錄，消費支出錄得90億元新高，相對實體店消費大減52.1%。綜合《今日美國》與霍士財經報道，市場分析公司Adobe Analytics追蹤全國首100間網上商店當中80間的銷售情況。</p>
+                        <p>新冠疫情的阴影下，27日「黑色星期五」的网上购物刷新纪录，消费支出录得90亿元新高，相对实体店消费大减52.1%。综合《今日美国》与霍士财经报道，市场分析公司Adobe Analytics追踪全国首100间网上商店当中80间的销售情况。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156052-%E7%9C%BE%E7%B1%8C%E7%B6%B2%E7%AB%99%E8%AE%8A%E6%B1%82%E6%95%91%E5%B9%B3%E5%8F%B0+%E5%8A%A9%E5%A4%B1%E6%A5%AD%E8%80%85%E6%8D%B1%E9%81%8E%E9%9B%A3%E9%97%9C" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>眾籌網站變求救平台 助失業者捱過難關</h3>
+                        <h3>众筹网站变求救平台 助失业者挨过难关</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>眾籌網站GoFundMe是國民常用的募捐平台，疫情下平台今年破紀錄籌得超過1億元，是去年同期的1.5倍，是不少失業者「求救」的首選。</p>
+                        <p>众筹网站GoFundMe是国民常用的募捐平台，疫情下平台今年破纪录筹得超过1亿元，是去年同期的1.5倍，是不少失业者「求救」的首选。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156019-%E7%96%AB%E8%8B%97%E5%88%86%E5%85%A9%E6%AC%A1%E6%89%93+%E5%A2%9E%E5%8A%A0%E6%93%8D%E4%BD%9C%E8%A4%87%E9%9B%9C%E6%80%A7" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>疫苗分兩次打 增加操作複雜性</h3>
+                        <h3>疫苗分两次打 增加操作复杂性</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>當豪威爾（Molly Howell）談到，為了對抗新冠病毒，需要為北達科州的210間長期護理中心的居民注射兩針的疫苗時，她表示，這彷彿是是一次空中運輸總動員，但卻不知道手上有多少可以調用的飛機。</p>
+                        <p>当豪威尔（Molly Howell）谈到，为了对抗新冠病毒，需要为北达科州的210间长期护理中心的居民注射两针的疫苗时，她表示，这仿佛是是一次空中运输总动员，但却不知道手上有多少可以调用的飞机。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156036-%E7%97%85%E6%AF%92%E4%B8%80%E6%97%A6%E9%80%B2%E5%8C%96+%E6%88%96%E5%B0%87%E5%B0%8D%E7%96%AB%E8%8B%97%E7%94%A2%E7%94%9F%E6%8A%B5%E6%8A%97%E5%8A%9B" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>病毒一旦進化 或將對疫苗產生抵抗力</h3>
+                        <h3>病毒一旦进化 或将对疫苗产生抵抗力</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>近日接連傳出新冠疫苗研發有新進展，為嚴竣疫情帶來曙光，但科學家坦言病毒或會隨時間進化對疫苗產生抵抗力。新冠康復者的血漿則成為治療新武器，挽救其他新冠患者一命。</p>
+                        <p>近日接连传出新冠疫苗研发有新进展，为严竣疫情带来曙光，但科学家坦言病毒或会随时间进化对疫苗产生抵抗力。新冠康复者的血浆则成为治疗新武器，挽救其他新冠患者一命。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156039-%E7%96%AB%E8%8B%97%E5%B0%8D%E7%85%A7%E7%B5%84%E8%8B%A5%E9%80%80%E5%87%BA%E5%B0%87%E5%BD%B1%E9%9F%BF%E6%B8%AC%E8%A9%A6%E7%B2%BE%E6%BA%96%E5%BA%A6" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>疫苗對照組若退出
-將影響測試精準度</h3>
+                        <h3>疫苗对照组若退出
+将影响测试精准度</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>全球各地加緊進行新冠疫苗測試，獲不少志願者參與。但近期有測試志願者相信自己在測試時接受的是安慰劑（即對照組），醞釀退出測試以便接受真正疫苗注射，專家擔心會影響測試。</p>
+                        <p>全球各地加紧进行新冠疫苗测试，获不少志愿者参与。但近期有测试志愿者相信自己在测试时接受的是安慰剂（即对照组），酝酿退出测试以便接受真正疫苗注射，专家担心会影响测试。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156041-%E6%97%85%E8%A1%8C%E6%90%9C%E7%B4%A2%E9%87%8F%E5%A4%A7%E5%A2%9E%E5%AE%8C%E5%85%A8%E5%BE%A9%E8%98%87%E8%A6%81%E5%B9%BE%E5%B9%B4" target="_blank">
                     <div class="g-thing-wrapper">
                         <h3>旅行搜索量大增
-完全復蘇要幾年</h3>
+完全复苏要几年</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>CNBC報道，隨著有效的新冠疫苗有望在2020年底面市，那麼新冠疫情中最受摧殘行業之一的旅遊業，有機會很快就開始復蘇嗎？</p>
+                        <p>CNBC报道，随著有效的新冠疫苗有望在2020年底面市，那么新冠疫情中最受摧残行业之一的旅游业，有机会很快就开始复苏吗？</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156043-%E5%96%AE%E6%97%A5%E6%96%B0%E7%97%85%E4%BE%8B%E7%A0%B420%E8%90%AC++%E5%B0%88%E5%AE%B6%E5%B0%8D%E7%AF%80%E5%BE%8C%E6%9B%B4%E6%82%B2%E8%A7%80" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>單日新病例破20萬  專家對節後更悲觀</h3>
+                        <h3>单日新病例破20万  专家对节后更悲观</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>新冠肺炎疫情再破紀錄，27日的單日確診人數首次突破20萬，全國受感染累計人數也超過1300萬，專家憂慮感恩節周末的購物和聚會增加，可能導致疫情惡化。</p>
+                        <p>新冠肺炎疫情再破纪录，27日的单日确诊人数首次突破20万，全国受感染累计人数也超过1300万，专家忧虑感恩节周末的购物和聚会增加，可能导致疫情恶化。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3156015-%E7%96%AB%E8%8B%97%E5%B0%87%E5%B1%95%E9%96%8B%E9%85%8D%E9%80%81%E3%80%80%E8%AA%B0%E5%8F%AF%E5%85%88%E7%8D%B2%E6%96%BD%E6%89%93" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>疫苗將展開配送　誰可先獲施打</h3>
+                        <h3>疫苗将展开配送　谁可先获施打</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">1天前</p>
                          </div>
-                        <p>《華爾街日報》（Wall Street Journal）報道，新冠疫苗陸續研發出來後，哪些群體可以優先獲得第一劑成為焦點。按目前的規劃，最初的疫苗劑量可能會給醫療保健專業人員、從事基本工作的工人、療養院的群體、年長者以及處於高風險中的潛在條件的人。</p>
+                        <p>《华尔街日报》（Wall Street Journal）报道，新冠疫苗陆续研发出来后，哪些群体可以优先获得第一剂成为焦点。按目前的规划，最初的疫苗剂量可能会给医疗保健专业人员、从事基本工作的工人、疗养院的群体、年长者以及处于高风险中的潜在条件的人。</p>
                     </div>
                 </a>
                 
@@ -3926,12 +4068,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/_PQK1Nlpo9M/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>自由的人，來碗自由的三平汁吧！</h3>
+                        <h3>自由的人，来碗自由的三平汁吧！</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>在北海道的大地上，唯一能與石狩鍋匹敵的官方對手，就是自由、隨心而多變的三平汁了。</p>
+                        <p>在北海道的大地上，唯一能与石狩锅匹敌的官方对手，就是自由、随心而多变的三平汁了。</p>
                     </div>
                 </a>
                 
@@ -3948,12 +4090,12 @@
                 
                 <a class="g-thing 端传媒" href="http://feeds.initium.news/~r/theinitium/~3/nBbOwOx7hWo/" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>一種持久堅挺的白色幻覺怎麼維持？007宇宙在2020年的動盪</h3>
+                        <h3>一种持久坚挺的白色幻觉怎么维持？007宇宙在2020年的动荡</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">端传媒</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>夢因慾望而生。一再在電影院中做這種重生的夢，反應的是現實中面臨衰敗而期待再起的強烈慾望⋯⋯</p>
+                        <p>梦因欲望而生。一再在电影院中做这种重生的梦，反应的是现实中面临衰败而期待再起的强烈欲望⋯⋯</p>
                     </div>
                 </a>
                 
@@ -4092,124 +4234,124 @@
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154889-%E9%A6%96%E5%A0%B4%E5%86%AC%E5%AD%A3%E9%9B%AA%E9%9B%A8%E9%A2%A8%E6%9A%B4%E4%B8%8B%E5%91%A8%E4%BE%B5%E8%A5%B2%E7%BE%8E%E6%9D%B1%E5%A4%9A%E5%9C%B0" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>首場冬季雪雨風暴
-下周侵襲美東多地</h3>
+                        <h3>首场冬季雪雨风暴
+下周侵袭美东多地</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>東岸地區將於30日迎來首場強烈冬季風暴，田納西、肯塔基、密歇根州廣泛地區都會出現風雪，沿岸州份多處地方則會出現大雷雨。</p>
+                        <p>东岸地区将于30日迎来首场强烈冬季风暴，田纳西、肯塔基、密歇根州广泛地区都会出现风雪，沿岸州份多处地方则会出现大雷雨。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154894-%E7%8F%BE%E4%BB%A3%E8%B5%B7%E4%BA%9E%E5%BB%B6%E9%81%B2%E5%8F%AC%E5%9B%9E%E8%A2%AB%E7%BD%B02.1%E5%84%84++%E7%89%B9%E6%96%AF%E6%8B%8911.5%E8%90%AC%E5%95%8F%E9%A1%8C%E8%BB%8A%E8%BC%9B%E8%A2%AB%E6%9F%A5" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>現代起亞延遲召回被罰2.1億  特斯拉11.5萬問題車輛被查</h3>
+                        <h3>现代起亚延迟召回被罚2.1亿  特斯拉11.5万问题车辆被查</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>現代與起亞兩家車廠分別與聯邦政府達成和解，同意為延遲召回160萬輛問題汽車一事罰款2.1億元。與此同時，政府也表示特斯拉（Tesla）部分汽車的前懸架可能存在問題，當局在接到多宗投訴後已跟進調查。</p>
+                        <p>现代与起亚两家车厂分别与联邦政府达成和解，同意为延迟召回160万辆问题汽车一事罚款2.1亿元。与此同时，政府也表示特斯拉（Tesla）部分汽车的前悬架可能存在问题，当局在接到多宗投诉后已跟进调查。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154865-%E7%B6%B2%E4%B8%8A%E8%B3%BC%E8%B2%B7%E8%B7%AF%E9%82%8A%E5%8F%96%E8%B2%A8%E5%89%B5%E6%96%B0%E9%AB%98+%E7%96%AB%E6%83%85%E4%B8%8B%E9%BB%91%E4%BA%94%E5%95%86%E5%BA%97%E9%96%80%E5%BA%AD%E5%86%B7%E8%90%BD" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>網上購買路邊取貨創新高 疫情下黑五商店門庭冷落</h3>
+                        <h3>网上购买路边取货创新高 疫情下黑五商店门庭冷落</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>感恩節翌日的「黑色星期五」向來是年終購物高峰期的起點，然而在新冠疫情之下，不少人改以網絡購物，實體店的人流明顯較往年冷清。</p>
+                        <p>感恩节翌日的「黑色星期五」向来是年终购物高峰期的起点，然而在新冠疫情之下，不少人改以网络购物，实体店的人流明显较往年冷清。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154868-%E5%AE%85%E5%9C%A8%E5%AE%B6%E4%B8%AD%E9%81%BF%E7%96%AB%E9%81%8E%E7%AF%80%E6%88%B6%E5%A4%96%E8%81%96%E8%AA%95%E7%87%88%E9%A3%BE%E7%86%B1%E8%B3%A3" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>宅在家中避疫過節戶外聖誕燈飾熱賣</h3>
+                        <h3>宅在家中避疫过节户外圣诞灯饰热卖</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>雖然新冠病毒的疫苗即將面世，但外界相信國民仍需在疫情下度過聖誕，有裝飾公司表示，今年戶外聖誕燈飾的生意勝於往年，相信和消費者普遍期望留家有關。</p>
+                        <p>虽然新冠病毒的疫苗即将面世，但外界相信国民仍需在疫情下度过圣诞，有装饰公司表示，今年户外圣诞灯饰的生意胜于往年，相信和消费者普遍期望留家有关。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154870-%E6%84%9F%E6%81%A9%E7%AF%80%E4%BD%8F%E9%99%A2%E4%BA%BA%E6%95%B8%E7%A0%B49%E8%90%AC++%E6%96%B0%E7%97%85%E4%BE%8B%E6%AD%BB%E4%BA%A1%E6%95%B8%E5%AD%97%E5%9D%87%E4%B8%8B%E9%99%8D" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>感恩節住院人數破9萬  新病例死亡數字均下降</h3>
+                        <h3>感恩节住院人数破9万  新病例死亡数字均下降</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>在全國民眾歡慶感恩節之際，新冠疫情持續肆虐，住院人數達到破紀錄的9萬餘人，其中1.7萬人需要接受深切治療，另外新增病例也達到11萬，雖比之前的高峰期有所回落，但依然數字驚人。</p>
+                        <p>在全国民众欢庆感恩节之际，新冠疫情持续肆虐，住院人数达到破纪录的9万余人，其中1.7万人需要接受深切治疗，另外新增病例也达到11万，虽比之前的高峰期有所回落，但依然数字惊人。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154886-%E7%A6%81%E9%A9%85%E9%80%90%E6%88%BF%E5%AE%A2%E4%BB%A412%E6%9C%88%E5%BA%95%E5%88%B0%E6%9C%9F++%E5%B1%86%E6%99%82%E6%81%901900%E8%90%AC%E4%BA%BA%E6%B5%81%E9%9B%A2%E5%A4%B1%E6%89%80" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>禁驅逐房客令12月底到期  屆時恐1900萬人流離失所</h3>
+                        <h3>禁驱逐房客令12月底到期  届时恐1900万人流离失所</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>新冠疫情衝擊經濟與就業後，聯邦與地方政府下令，禁止房東驅逐無法繳租的房客，但隨著禁令將在12月底到期，研究預料將有1900萬人流離失所。</p>
+                        <p>新冠疫情冲击经济与就业后，联邦与地方政府下令，禁止房东驱逐无法缴租的房客，但随著禁令将在12月底到期，研究预料将有1900万人流离失所。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154852-%E8%81%AF%E9%82%A6%E5%B7%A1%E8%BF%B4%E5%BA%AD%E9%A7%81%E5%9B%9E%E8%A8%B4%E8%A8%9F+%E7%89%B9%E6%9C%97%E6%99%AE%E4%B8%8A%E8%A8%B4%E9%AB%98%E9%99%A2%E5%9C%A8%E5%8D%B3" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>聯邦巡迴庭駁回訴訟 特朗普上訴高院在即</h3>
+                        <h3>联邦巡回庭驳回诉讼 特朗普上诉高院在即</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>一個聯邦上訴庭27日駁回特朗普競選團隊指控賓州投票存在大量舞弊現象的訴訟，從而為特朗普上訴到最高法院掃除障礙。</p>
+                        <p>一个联邦上诉庭27日驳回特朗普竞选团队指控宾州投票存在大量舞弊现象的诉讼，从而为特朗普上诉到最高法院扫除障碍。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154855-%E7%89%B9%E6%9C%97%E6%99%AE%E8%A7%A3%E8%81%9811%E5%9C%8B%E9%98%B2%E9%A1%A7%E5%95%8F+%E5%9F%BA%E8%BE%9B%E6%A0%BC%E5%A5%A7%E7%88%BE%E5%B8%83%E8%B3%B4%E7%89%B9%E9%81%AD%E6%92%A4" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>特朗普解聘11國防顧問 基辛格奧爾布賴特遭撤</h3>
+                        <h3>特朗普解聘11国防顾问 基辛格奥尔布赖特遭撤</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>特朗普政府突然重組國防部高級顧問委員會人事，包括前國務卿基辛格（Henry Kissinger）、奧爾布賴特（Madeleine Albright）在內的多名資深外交家被撤換。共和黨專家表示，雖然被撤的專家在美中政策等議題上，與總統特朗普意見不一，但考慮到政府即將交接，因此決定仍令人費解。</p>
+                        <p>特朗普政府突然重组国防部高级顾问委员会人事，包括前国务卿基辛格（Henry Kissinger）、奥尔布赖特（Madeleine Albright）在内的多名资深外交家被撤换。共和党专家表示，虽然被撤的专家在美中政策等议题上，与总统特朗普意见不一，但考虑到政府即将交接，因此决定仍令人费解。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154857-%E6%8C%87%E6%8E%A8%E7%89%B9%E5%B0%81%E8%99%9F%E5%8D%B1%E5%AE%B3%E5%9C%8B%E5%AE%89+%E7%89%B9%E6%9C%97%E6%99%AE%E4%BF%83%E7%AB%8B%E5%BB%A2230%E6%A2%9D%E6%96%87" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>指推特封號危害國安 特朗普促立廢230條文</h3>
+                        <h3>指推特封号危害国安 特朗普促立废230条文</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>總統特朗普在感恩節節日期間發出多個推文，猛烈抨擊推特及臉書這些社交傳媒壓制不同意見的做法是壓制言論自由，做法猶如共產國家，同時揚言為國家安全目的，必須立即終止保護網上社交傳媒的230條文（Section 230）。</p>
+                        <p>总统特朗普在感恩节节日期间发出多个推文，猛烈抨击推特及脸书这些社交传媒压制不同意见的做法是压制言论自由，做法犹如共产国家，同时扬言为国家安全目的，必须立即终止保护网上社交传媒的230条文（Section 230）。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154860-%E5%A4%9A%E5%9C%B0%E7%88%86%E7%99%BC%E5%8F%8D%E6%84%9F%E6%81%A9%E7%AF%80%E7%A4%BA%E5%A8%81%E6%B3%A2%E7%89%B9%E8%98%AD%E5%A1%97%E9%B4%89%E7%A0%B8%E5%BA%97%E6%AF%80%E9%9B%95%E5%83%8F" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>多地爆發反感恩節示威
-波特蘭塗鴉砸店毀雕像</h3>
+                        <h3>多地爆发反感恩节示威
+波特兰涂鸦砸店毁雕像</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>全國多地有人響應激進左翼組織安提法（Antifa）呼籲，質疑感恩節是殖民主義和資本主義產物，因此發起反節日示威，並且破壞當地的相關紀念碑和雕像。其中在俄勒岡州波特蘭（Portland），商戶亦淪為受襲目標，當局拘捕3人。</p>
+                        <p>全国多地有人响应激进左翼组织安提法（Antifa）呼吁，质疑感恩节是殖民主义和资本主义产物，因此发起反节日示威，并且破坏当地的相关纪念碑和雕像。其中在俄勒冈州波特兰（Portland），商户亦沦为受袭目标，当局拘捕3人。</p>
                     </div>
                 </a>
                 
                 <a class="g-thing 星岛日报" href="http://www.singtaousa.com/home/455-美國/3154863-%E5%8F%B8%E6%B3%95%E9%83%A8%E6%94%B9%E8%A6%8F%E5%AE%9A++%E6%94%BE%E5%AF%AC%E6%AD%BB%E5%88%91%E9%81%B8%E9%A0%85" target="_blank">
                     <div class="g-thing-wrapper">
-                        <h3>司法部改規定  放寬死刑選項</h3>
+                        <h3>司法部改规定  放宽死刑选项</h3>
                         <div style="text-align: center">
                           <p class="byline publisher">星岛日报</p>
                           <p class="byline first_seen">2天前</p>
                          </div>
-                        <p>司法部修改法律條文，允許各州執行死刑時，以槍斃、電殛、致命氣體等方法取代毒針注射。</p>
+                        <p>司法部修改法律条文，允许各州执行死刑时，以枪毙、电殛、致命气体等方法取代毒针注射。</p>
                     </div>
                 </a>
                 
@@ -4332,9 +4474,7 @@
         <footer>
             <div class="cf no-content" id="footer">
                 <div class="copyright">
-                    版权说明：本站为个人非商业项目，旨在聚合高质量中文新闻，提供愉悦的阅读体验。站点仅聚合新闻标题、原文链接、发布时间及摘要，所有链接均指向原发布方，读者对原文的阅读行为均发生在原网站。
-                    如有疑问， 请<a href = "mailto: kaopu.news@gmail.com"><u>邮件联系</u></a>，谢谢！
-
+                    版权说明：本站为个人非商业项目，旨在聚合高质量中文新闻，提供愉悦的阅读体验。站点仅聚合新闻标题、原文链接、发布时间及摘要，    所有链接均指向原发布方，读者对原文的阅读行为均发生在原网站。如有疑问，     请<a href = 'mailto: kaopu.news@gmail.com'><u>邮件联系</u></a>，谢谢！
                 </div>
             </div>
         </footer>
@@ -4352,7 +4492,67 @@
             }
         });
     </script>
-    <script src="assets/btn.js"></script>
+  <script src="assets/btn.js"></script>
+  <script>
+    function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function delCookie(cname) {
+      if(getCookie(cname) !== "") {
+        setCookie(cname, "", 0);
+      }
+    }
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    function hansHantConvert(s2t) {
+      const lang = document.querySelector('meta[name="lang"]').content
+      if(s2t && lang === "zh-hans") {
+        setCookie("zh-hant", "true", 365);
+        window.location.href = "/zh-hant.html";
+      }
+      if(!s2t && lang === "zh-hant") {
+        delCookie("zh-hant")
+        window.location.href = "/index.html";
+      }
+    }
+    function checkLang() {
+      const lang = document.querySelector('meta[name="lang"]').content
+      let zhHantOn = getCookie("zh-hant");
+      if (zhHantOn === "true") {
+        if (lang !== "zh-hant") {
+          window.location.href = "/zh-hant.html";
+        } else {
+          document.getElementById("lang-hans").disabled = false;
+          document.getElementById("lang-hant").disabled = true;
+          }
+        }
+      else {  // zhHant is off
+        if (lang !== "zh-hans") {
+          window.location.href = "/index.html";
+        }
+        else {
+          document.getElementById("lang-hans").disabled = true;
+          document.getElementById("lang-hant").disabled = false;
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
