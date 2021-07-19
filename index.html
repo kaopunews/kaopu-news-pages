@@ -102,13 +102,30 @@
     }
     function appendData(data) {
         let mainContainer = document.getElementById("g-graphic");
-        const renderedItems = data.map(item => renderNewsItem(item))
+        const activeButton = activeControlButton()
+        const renderedItems = data.map(item => renderNewsItem(item, activeButton))
         mainContainer.insertAdjacentHTML('beforeend', renderedItems.join("\n"));
     }
-    function renderNewsItem(item) {
-        const aoyun = item.title.includes("奥运") || item.story_summary.includes("奥运") ? "奥运" : "";
+    function activeControlButton() {
+        const controlButtons = document.querySelector(".controls").querySelectorAll(".control");
+        for (let i = 0; i < controlButtons.length; i++) {
+            if(controlButtons[i].classList.contains("active")) {
+                return controlButtons[i].textContent;
+            }
+        }
+        return null;
+    }
+    function renderNewsItem(item, activeButton) {
+        const aoyun_hans = "奥运";
+        const aoyun = item.title.includes(aoyun_hans) || item.story_summary.includes(aoyun_hans) ? aoyun_hans : "";
+        const show = (
+            activeButton.includes("全部")
+            || activeButton.includes(item.publisher)
+            || (activeButton.includes(aoyun_hans) && (aoyun !== ""))
+        )
+            ? "show" : "";
         return `
-        <a class="g-thing ${item.publisher} ${aoyun} show" href="${item.link}" target="_blank">
+        <a class="g-thing ${item.publisher} ${aoyun} ${show}" href="${item.link}" target="_blank">
             <div class="g-thing-wrapper">
                 <h3>${item.title}</h3>
                 <div style="text-align: center">
