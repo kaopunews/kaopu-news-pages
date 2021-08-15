@@ -69,7 +69,7 @@
                 <button class="control" onclick="filterSelection('東亞日報')">東亞日報</button>
                 <button class="control" onclick="filterSelection('韓國經濟日報')">韓國經濟日報</button>
                 <button class="control" onclick="filterSelection('法廣')">法廣</button>
-                <button class="control" onclick="filterSelection('奧運')"> 奧運專題🏅 </button>
+                <button class="control" onclick="filterSelection('阿富汗')"> 阿富汗局勢🇦🇫 </button>
             </div>
             <div id="g-graphic"></div>
             <button type="button" class="control" id="showDay0" style="display: block; margin-left: auto; margin-right: auto;">加載ing...</button>
@@ -115,7 +115,7 @@
         return null;
     }
     function renderNewsItem(item, activeButton) {
-        const aoyun_hans = "奧運";
+        const aoyun_hans = "阿富汗";
         const aoyun = item.title.includes(aoyun_hans) || item.story_summary.includes(aoyun_hans) ? aoyun_hans : "";
         const show = (
             activeButton.includes("全部")
