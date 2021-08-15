@@ -116,7 +116,12 @@
     }
     function renderNewsItem(item, activeButton) {
         const aoyun_hans = "阿富汗";
-        const aoyun = item.title.includes(aoyun_hans) || item.story_summary.includes(aoyun_hans) ? aoyun_hans : "";
+        const keyword_2 = "塔利班";
+        const aoyun = item.title.includes(aoyun_hans)
+        || item.story_summary.includes(aoyun_hans)
+        || item.title.includes(keyword_2)
+        || item.story_summary.includes(keyword_2)
+            ? aoyun_hans : "";
         const show = (
             activeButton.includes("全部")
             || activeButton.includes(item.publisher)
