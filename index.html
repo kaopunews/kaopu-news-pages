@@ -65,12 +65,10 @@
                 <button class="control" onclick="filterSelection('韩民族日报')"> 韩民族日报 </button>
                 <button class="control" onclick="filterSelection('端传媒')"> 端传媒 </button>
                 <button class="control" onclick="filterSelection('ABC中文（澳）')"> ABC中文（澳）</button>
-                <button class="control" onclick="filterSelection('星岛日报')"> 星岛日报 </button>
                 <button class="control" onclick="filterSelection('共同社（日）')"> 共同社（日）</button>
                 <button class="control" onclick="filterSelection('东亚日报')"> 东亚日报 </button>
                 <button class="control" onclick="filterSelection('韩国经济日报')"> 韩国经济日报 </button>
                 <button class="control" onclick="filterSelection('法广')"> 法广 </button>
-                <button class="control" onclick="filterSelection('阿富汗')"> 阿富汗局势🇦🇫 </button>
             </div>
             <div id="g-graphic"></div>
             <button type="button" class="control" id="showDay0" style="display: block; margin-left: auto; margin-right: auto;">加载ing...</button>
@@ -102,8 +100,7 @@
     }
     function appendData(data) {
         let mainContainer = document.getElementById("g-graphic");
-        const activeButton = activeControlButton()
-        const renderedItems = data.map(item => renderNewsItem(item, activeButton))
+        const renderedItems = data.map(item => renderNewsItem(item))
         mainContainer.insertAdjacentHTML('beforeend', renderedItems.join("\n"));
     }
     function activeControlButton() {
@@ -115,22 +112,9 @@
         }
         return null;
     }
-    function renderNewsItem(item, activeButton) {
-        const aoyun_hans = "阿富汗";
-        const keyword_2 = "塔利班";
-        const aoyun = item.title.includes(aoyun_hans)
-        || item.story_summary.includes(aoyun_hans)
-        || item.title.includes(keyword_2)
-        || item.story_summary.includes(keyword_2)
-            ? aoyun_hans : "";
-        const show = (
-            activeButton.includes("全部")
-            || activeButton.includes(item.publisher)
-            || (activeButton.includes(aoyun_hans) && (aoyun !== ""))
-        )
-            ? "show" : "";
+    function renderNewsItem(item) {
         return `
-        <a class="g-thing ${item.publisher} ${aoyun} ${show}" href="${item.link}" target="_blank">
+        <a class="g-thing ${item.publisher} show" href="${item.link}" target="_blank">
             <div class="g-thing-wrapper">
                 <h3>${item.title}</h3>
                 <div style="text-align: center">
