@@ -5,8 +5,10 @@ const ONE_DAY_IN_SECONDS = 86400;
 
 
 function convertTS(ts) {
-    const UTCNow = Date.now() / 1000; // turn milliseconds into seconds
-    const timeDiff = UTCNow - ts;
+    const dateFromTS = Date.parse(ts); // parse the timestamp
+    const UTCNow = Date.now(); // get the current time in milliseconds
+    const timeDiff = (UTCNow - dateFromTS) / 1000; // calculate the difference in seconds
+
     if (timeDiff / ONE_HOUR_IN_SECONDS < 1) return `${Math.round(timeDiff / ONE_MINUTE_IN_SECONDS)}分钟前`;
     if (timeDiff / ONE_DAY_IN_SECONDS < 1) return  `${Math.round(timeDiff / ONE_HOUR_IN_SECONDS)}小时前`;
     return  `${Math.round(timeDiff / ONE_DAY_IN_SECONDS)}天前`;

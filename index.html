@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_hans_0.json" as="fetch" crossorigin="anonymous"/>
+    <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_0.json" as="fetch" crossorigin="anonymous"/>
     <title>靠谱新闻</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131682752-1"></script>
@@ -63,16 +63,19 @@
                 <button class="control" onclick="filterSelection('半岛')"> 半岛 </button>
                 <button class="control" onclick="filterSelection('韩民族日报')"> 韩民族日报 </button>
                 <button class="control" onclick="filterSelection('端传媒')"> 端传媒 </button>
-                <button class="control" onclick="filterSelection('ABC中文（澳）')"> ABC中文（澳）</button>
-                <button class="control" onclick="filterSelection('共同社（日）')"> 共同社（日）</button>
+                <button class="control" onclick="filterSelection('澳大利亚广播公司')"> 澳广</button>
+                <button class="control" onclick="filterSelection('共同网')"> 共同社（日）</button>
                 <button class="control" onclick="filterSelection('东亚日报')"> 东亚日报 </button>
-                <button class="control" onclick="filterSelection('韩国经济日报')"> 韩国经济日报 </button>
+                <button class="control" onclick="filterSelection('英国广播公司')"> BBC </button>
                 <button class="control" onclick="filterSelection('法广')"> 法广 </button>
+                <button class="control" onclick="filterSelection('瑞士新闻简讯')"> 瑞士资讯SWI </button>
+                <button class="control" onclick="filterSelection('日本放送协会')"> NHK </button>
             </div>
             <div id="g-graphic"></div>
             <button type="button" class="control" id="showDay0" style="display: block; margin-left: auto; margin-right: auto;">加载ing...</button>
             <button type="button" class="control" id="showDay1" onclick="clickDay1Button()" style="display: none; margin-left: auto; margin-right: auto;">加载更多</button>
             <button type="button" class="control" id="showDay2" onclick="clickDay2Button()" style="display: none; margin-left: auto; margin-right: auto;">加载更多</button>
+            <button type="button" class="control" id="showDay3" onclick="clickDay3Button()" style="display: none; margin-left: auto; margin-right: auto;">加载更多</button>
         </article>
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="font-size: 25px;">⤒</button>
         <footer>
@@ -86,16 +89,20 @@
 <script src="assets/pagefunction.js"></script>
 <script>
     function showDay0() {
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hans_0.json', 'showDay0')
+        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_0.json', 'showDay0')
     }
     function clickDay1Button(){
         document.getElementById("showDay1").textContent = "加载ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hans_1.json', 'showDay1');
+        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_1.json', 'showDay1');
 
     }
     function clickDay2Button(){
         document.getElementById("showDay2").textContent = "加载ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hans_2.json', 'showDay2');
+        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_2.json', 'showDay2');
+    }
+    function clickDay3Button(){
+        document.getElementById("showDay3").textContent = "加载ing...";
+        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_3.json', 'showDay3');
     }
     function appendData(data) {
         let mainContainer = document.getElementById("g-graphic");
@@ -118,9 +125,9 @@
                 <h3>${item.title}</h3>
                 <div style="text-align: center">
                 <p class="byline publisher">${item.publisher}</p>
-                <p class="byline first_seen">${convertTS(item.first_seen)}</p>
+                <p class="byline first_seen">${convertTS(item.pubDate)}</p>
             </div>
-            <p> ${item.story_summary}</p>
+            <p> ${item.description}</p>
             </div>
         </a>
         `
@@ -147,6 +154,11 @@
                     case 'showDay2':
                         let showDay2Btn = document.getElementById("showDay2");
                         showDay2Btn.parentNode.removeChild(showDay2Btn);
+                        document.getElementById("showDay3").style.display = "block";
+                        break;
+                    case 'showDay3':
+                        let showDay3Btn = document.getElementById("showDay3");
+                        showDay3Btn.parentNode.removeChild(showDay3Btn);
                         break;
                     default:
                         break;

@@ -8,7 +8,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_hant_0.json" as="fetch" crossorigin="anonymous"/>
+    <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_0.json" as="fetch" crossorigin="anonymous"/>
     <title>靠譜新聞</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131682752-1"></script>
@@ -62,16 +62,19 @@
                 <button class="control" onclick="filterSelection('半島')">半島</button>
                 <button class="control" onclick="filterSelection('韓民族日報')">韓民族日報</button>
                 <button class="control" onclick="filterSelection('端傳媒')">端傳媒</button>
-                <button class="control" onclick="filterSelection('ABC中文（澳）')">ABC中文（澳）</button>
-                <button class="control" onclick="filterSelection('共同社（日）')">共同社（日）</button>
+                <button class="control" onclick="filterSelection('ABC中文（澳）')">澳廣</button>
+                <button class="control" onclick="filterSelection('共同網）')">共同社（日）</button>
                 <button class="control" onclick="filterSelection('東亞日報')">東亞日報</button>
-                <button class="control" onclick="filterSelection('韓國經濟日報')">韓國經濟日報</button>
+                <button class="control" onclick="filterSelection('英國廣播公司')"> BBC </button>
                 <button class="control" onclick="filterSelection('法廣')">法廣</button>
+                <button class="control" onclick="filterSelection('瑞士新聞簡訊')"> 瑞士資訊SWI </button>
+                <button class="control" onclick="filterSelection('日本放送協會')"> NHK </button>
             </div>
             <div id="g-graphic"></div>
             <button type="button" class="control" id="showDay0" style="display: block; margin-left: auto; margin-right: auto;">加載ing...</button>
             <button type="button" class="control" id="showDay1" onclick="clickDay1Button()" style="display: none; margin-left: auto; margin-right: auto;">加載更多</button>
             <button type="button" class="control" id="showDay2" onclick="clickDay2Button()" style="display: none; margin-left: auto; margin-right: auto;">加載更多</button>
+            <button type="button" class="control" id="showDay3" onclick="clickDay3Button()" style="display: none; margin-left: auto; margin-right: auto;">加載更多</button>
         </article>
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="font-size: 25px;">⤒</button>
         <footer>
@@ -82,145 +85,155 @@
             </div>
         </footer>
     </main>
-<script src="assets/pagefunction.js"></script>
-<script>
-    function showDay0() {
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hant_0.json', 'showDay0')
-    }
-    function clickDay1Button(){
-        document.getElementById("showDay1").textContent = "加載ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hant_1.json', 'showDay1');
-
-    }
-    function clickDay2Button(){
-        document.getElementById("showDay2").textContent = "加載ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_hant_2.json', 'showDay2');
-    }
-    function appendData(data) {
-        let mainContainer = document.getElementById("g-graphic");
-        const renderedItems = data.map(item => renderNewsItem(item))
-        mainContainer.insertAdjacentHTML('beforeend', renderedItems.join("\n"));
-    }
-    function activeControlButton() {
-        const controlButtons = document.querySelector(".controls").querySelectorAll(".control");
-        for (let i = 0; i < controlButtons.length; i++) {
-            if(controlButtons[i].classList.contains("active")) {
-                return controlButtons[i].textContent;
-            }
+    <script src="assets/pagefunction.js"></script>
+    <script>
+        function showDay0() {
+            fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_0.json', 'showDay0')
         }
-        return null;
-    }
-    function renderNewsItem(item) {
-        return `
-        <a class="g-thing ${item.publisher} show" href="${item.link}" target="_blank">
-            <div class="g-thing-wrapper">
-                <h3>${item.title}</h3>
-                <div style="text-align: center">
-                <p class="byline publisher">${item.publisher}</p>
-                <p class="byline first_seen">${convertTS(item.first_seen)}</p>
-            </div>
-            <p> ${item.story_summary}</p>
-            </div>
-        </a>
-        `
-    }
-    function fetchAndProcess(dataUrl, btnId="") {
-        fetch(dataUrl, {credentials: 'same-origin'})
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data.slice(0, 18));  // render first 18 items ( 3 by 6)
-                appendData(data.slice(19));
-                switch(btnId) {
-                    case 'showDay0':
-                        let showDay0Btn = document.getElementById("showDay0");
-                        showDay0Btn.parentNode.removeChild(showDay0Btn);
-                        document.getElementById("showDay1").style.display = "block";
-                        break;
-                    case 'showDay1':
-                        let showDay1Btn = document.getElementById("showDay1");
-                        showDay1Btn.parentNode.removeChild(showDay1Btn);
-                        document.getElementById("showDay2").style.display = "block";
-                        break;
-                    case 'showDay2':
-                        let showDay2Btn = document.getElementById("showDay2");
-                        showDay2Btn.parentNode.removeChild(showDay2Btn);
-                        break;
-                    default:
-                        break;
+        function clickDay1Button(){
+            document.getElementById("showDay1").textContent = "加载ing...";
+            fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_1.json', 'showDay1');
+    
+        }
+        function clickDay2Button(){
+            document.getElementById("showDay2").textContent = "加载ing...";
+            fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_2.json', 'showDay2');
+        }
+        function clickDay3Button(){
+            document.getElementById("showDay3").textContent = "加载ing...";
+            fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_3.json', 'showDay3');
+        }
+        function appendData(data) {
+            let mainContainer = document.getElementById("g-graphic");
+            const renderedItems = data.map(item => renderNewsItem(item))
+            mainContainer.insertAdjacentHTML('beforeend', renderedItems.join("\n"));
+        }
+        function activeControlButton() {
+            const controlButtons = document.querySelector(".controls").querySelectorAll(".control");
+            for (let i = 0; i < controlButtons.length; i++) {
+                if(controlButtons[i].classList.contains("active")) {
+                    return controlButtons[i].textContent;
                 }
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-    }
-</script>
-<script>
-    showDay0()
-</script>
-  <script src="assets/btn.js"></script>
-  <script>
-    function setCookie(cname,cvalue,exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires=" + d.toGMTString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-    function delCookie(cname) {
-      if(getCookie(cname) !== "") {
-        setCookie(cname, "", 0);
-      }
-    }
-    function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
+            }
+            return null;
         }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
+        function renderNewsItem(item) {
+            return `
+            <a class="g-thing ${item.publisher} show" href="${item.link}" target="_blank">
+                <div class="g-thing-wrapper">
+                    <h3>${item.title}</h3>
+                    <div style="text-align: center">
+                    <p class="byline publisher">${item.publisher}</p>
+                    <p class="byline first_seen">${convertTS(item.pubDate)}</p>
+                </div>
+                <p> ${item.description}</p>
+                </div>
+            </a>
+            `
         }
-      }
-      return "";
-    }
-    function hansHantConvert(s2t) {
-      const lang = document.querySelector('meta[name="lang"]').content
-      if(s2t && lang === "zh-hans") {
-        setCookie("zh-hant", "true", 365);
-        window.location.href = "/zh-hant.html";
-      }
-      if(!s2t && lang === "zh-hant") {
-        delCookie("zh-hant")
-        window.location.href = "/index.html";
-      }
-    }
-    function checkLang() {
-      const lang = document.querySelector('meta[name="lang"]').content
-      let zhHantOn = getCookie("zh-hant");
-      if (zhHantOn === "true") {
-        if (lang !== "zh-hant") {
-          window.location.href = "/zh-hant.html";
-        } else {
-          document.getElementById("lang-hans").disabled = false;
-          document.getElementById("lang-hant").disabled = true;
+        function fetchAndProcess(dataUrl, btnId="") {
+            fetch(dataUrl, {credentials: 'same-origin'})
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    appendData(data.slice(0, 18));  // render first 18 items ( 3 by 6)
+                    appendData(data.slice(19));
+                    switch(btnId) {
+                        case 'showDay0':
+                            let showDay0Btn = document.getElementById("showDay0");
+                            showDay0Btn.parentNode.removeChild(showDay0Btn);
+                            document.getElementById("showDay1").style.display = "block";
+                            break;
+                        case 'showDay1':
+                            let showDay1Btn = document.getElementById("showDay1");
+                            showDay1Btn.parentNode.removeChild(showDay1Btn);
+                            document.getElementById("showDay2").style.display = "block";
+                            break;
+                        case 'showDay2':
+                            let showDay2Btn = document.getElementById("showDay2");
+                            showDay2Btn.parentNode.removeChild(showDay2Btn);
+                            document.getElementById("showDay3").style.display = "block";
+                            break;
+                        case 'showDay3':
+                            let showDay3Btn = document.getElementById("showDay3");
+                            showDay3Btn.parentNode.removeChild(showDay3Btn);
+                            break;
+                        default:
+                            break;
+                    }
+                })
+                .catch(function (err) {
+                    console.log('error: ' + err);
+                });
+        }
+     </script>
+    <script>
+        showDay0()
+    </script>
+      <script src="assets/btn.js"></script>
+      <script>
+        function setCookie(cname,cvalue,exdays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          var expires = "expires=" + d.toGMTString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function delCookie(cname) {
+          if(getCookie(cname) !== "") {
+            setCookie(cname, "", 0);
           }
         }
-
-      else {  // zhHant is off
-        if (lang !== "zh-hans") {
-          window.location.href = "/index.html";
+        function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
         }
-        else {
-          document.getElementById("lang-hans").disabled = true;
-          document.getElementById("lang-hant").disabled = false;
+        function hansHantConvert(s2t) {
+          const lang = document.querySelector('meta[name="lang"]').content
+          if(s2t && lang === "zh-hans") {
+            setCookie("zh-hant", "true", 365);
+            window.location.href = "/zh-hant.html";
+          }
+          if(!s2t && lang === "zh-hant") {
+            delCookie("zh-hant")
+            window.location.href = "/index.html";
+          }
         }
-      }
-    }
-  </script>
-
-</body>
-</html>
+        function checkLang() {
+          const lang = document.querySelector('meta[name="lang"]').content
+          let zhHantOn = getCookie("zh-hant");
+          if (zhHantOn === "true") {
+            if (lang !== "zh-hant") {
+              window.location.href = "/zh-hant.html";
+            } else {
+              document.getElementById("lang-hans").disabled = false;
+              document.getElementById("lang-hant").disabled = true;
+              }
+            }
+    
+          else {  // zhHant is off
+            if (lang !== "zh-hans") {
+              window.location.href = "/index.html";
+            }
+            else {
+              document.getElementById("lang-hans").disabled = true;
+              document.getElementById("lang-hant").disabled = false;
+            }
+          }
+        }
+      </script>
+    
+    </body>
+    </html>
+    
