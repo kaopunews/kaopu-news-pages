@@ -10,6 +10,13 @@
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
     <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_list_beta_hant_0.json" as="fetch" crossorigin="anonymous"/>
     <title>靠譜新聞</title>
+    <script>
+      (function() {
+        if (window.top !== window.self) {
+          window.top.location.href = window.self.location.href;
+        }
+      })();
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131682752-1"></script>
     <script>
