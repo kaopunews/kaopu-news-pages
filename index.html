@@ -233,10 +233,23 @@
   </script>
   <script>
     // Track news clicks via GTM dataLayer
+    console.log('News tracking script loaded');
+
     document.querySelectorAll('.g-thing').forEach(function(newsLink) {
+      console.log('Found news link:', newsLink);
+      
       newsLink.addEventListener('click', function(event) {
+        console.log('News link clicked!');
+        
         const title = this.querySelector('h3').textContent.trim();
         const publisher = this.querySelector('.publisher').textContent.trim();
+        
+        console.log('Pushing to dataLayer:', {
+          event: 'news_click',
+          news_title: title,
+          news_publisher: publisher,
+          news_url: this.href
+        });
         
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
