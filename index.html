@@ -235,31 +235,50 @@
     // Track news clicks via GTM dataLayer
     console.log('News tracking script loaded');
 
-    document.querySelectorAll('.g-thing').forEach(function(newsLink) {
-      console.log('Found news link:', newsLink);
+    function attachNewsTracking() {
+      console.log('Checking for news links...');
+      const newsLinks = document.querySelectorAll('.g-thing');
+      console.log('Found', newsLinks.length, 'news links');
       
-      newsLink.addEventListener('click', function(event) {
-        console.log('News link clicked!');
+      newsLinks.forEach(function(newsLink) {
+        // Skip if already tracked
+        if (newsLink.hasAttribute('data-tracked')) return;
         
-        const title = this.querySelector('h3').textContent.trim();
-        const publisher = this.querySelector('.publisher').textContent.trim();
+        console.log('Attaching tracking to:', newsLink);
+        newsLink.setAttribute('data-tracked', 'true');
         
-        console.log('Pushing to dataLayer:', {
-          event: 'news_click',
-          news_title: title,
-          news_publisher: publisher,
-          news_url: this.href
-        });
-        
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          'event': 'news_click',
-          'news_title': title,
-          'news_publisher': publisher,
-          'news_url': this.href
+        newsLink.addEventListener('click', function(event) {
+          console.log('News link clicked!');
+          
+          const title = this.querySelector('h3').textContent.trim();
+          const publisher = this.querySelector('.publisher').textContent.trim();
+          
+          console.log('Pushing to dataLayer:', {
+            event: 'news_click',
+            news_title: title,
+            news_publisher: publisher,
+            news_url: this.href
+          });
+          
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'news_click',
+            'news_title': title,
+            'news_publisher': publisher,
+            'news_url': this.href
+          });
         });
       });
-    });
+    }
+
+    // Try multiple times as news loads
+    setTimeout(attachNewsTracking, 1000);   // After 1 second
+    setTimeout(attachNewsTracking, 3000);   // After 3 seconds
+    setTimeout(attachNewsTracking, 5000);   // After 5 seconds
+
+    // Also run when DOM changes (if news is added dynamically)
+    const observer = new MutationObserver(attachNewsTracking);
+    observer.observe(document.body, { childList: true, subtree: true });
   </script>
 
 </body>
