@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -17,15 +16,6 @@
           window.top.location.href = window.self.location.href;
         }
       })();
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131682752-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-131682752-1');
     </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -240,6 +230,23 @@
         }
       }
     }
+  </script>
+  <script>
+    // Track news clicks via GTM dataLayer
+    document.querySelectorAll('.g-thing').forEach(function(newsLink) {
+      newsLink.addEventListener('click', function(event) {
+        const title = this.querySelector('h3').textContent.trim();
+        const publisher = this.querySelector('.publisher').textContent.trim();
+        
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'news_click',
+          'news_title': title,
+          'news_publisher': publisher,
+          'news_url': this.href
+        });
+      });
+    });
   </script>
 
 </body>
