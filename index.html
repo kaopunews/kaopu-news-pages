@@ -13,7 +13,23 @@
     <script>
       (function() {
         if (window.top !== window.self) {
-          window.top.location.href = window.self.location.href;
+          try {
+            // Try to redirect parent window
+            window.top.location.href = window.self.location.href;
+          } catch (e) {
+            console.log('Blocked from redirecting parent window:', e);
+            document.documentElement.style.display = 'none';
+            setTimeout(function() {
+              document.documentElement.style.display = 'block';
+              document.body.innerHTML = `
+                <div style="padding: 50px; text-align: center; font-family: Arial, sans-serif;">
+                  <h1>🚫 Content Blocked</h1>
+                  <p>This page cannot be displayed in a frame.</p>
+                  <p><strong><a href="${window.location.href}" target="_top" style="color: #007cba; text-decoration: none;">Click here to view kaopu.news directly</a></strong></p>
+                </div>
+              `;
+            }, 100);
+          }
         }
       })();
     </script>
