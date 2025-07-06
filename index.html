@@ -8,7 +8,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <link rel="preload" href="https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_0.json" as="fetch" crossorigin="anonymous"/>
+    <link rel="preload" href="https://kaopustorage.blob.core.windows.net/jsondata/news_list_beta_hans_0.json" as="fetch" crossorigin="anonymous"/>
     <title>靠谱新闻</title>
     <script>
       (function() {
@@ -102,20 +102,20 @@
 <script src="assets/pagefunction.js"></script>
 <script>
     function showDay0() {
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_0.json', 'showDay0')
+        fetchAndProcess('https://kaopustorage.blob.core.windows.net/jsondata/news_list_beta_hans_0.json', 'showDay0')
     }
     function clickDay1Button(){
         document.getElementById("showDay1").textContent = "加载ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_1.json', 'showDay1');
+        fetchAndProcess('https://kaopustorage.blob.core.windows.net/jsondata/news_list_beta_hans_1.json', 'showDay1');
 
     }
     function clickDay2Button(){
         document.getElementById("showDay2").textContent = "加载ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_2.json', 'showDay2');
+        fetchAndProcess('https://kaopustorage.blob.core.windows.net/jsondata/news_list_beta_hans_2.json', 'showDay2');
     }
     function clickDay3Button(){
         document.getElementById("showDay3").textContent = "加载ing...";
-        fetchAndProcess('https://kaopucdn.azureedge.net/jsondata/news_list_beta_hans_3.json', 'showDay3');
+        fetchAndProcess('https://kaopustorage.blob.core.windows.net/jsondata/news_list_beta_hans_3.json', 'showDay3');
     }
     function appendData(data) {
         let mainContainer = document.getElementById("g-graphic");
